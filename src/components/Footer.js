@@ -8,7 +8,7 @@ export default class Footer extends Component {
         <div className="container">
           <div className="text-center mx-auto py-2">
           <h6>Copyright  Etoile Beauty 2019</h6>
-          <h7>Powered by <br/> Blackgene Development</h7>
+          <h6>Powered by <br/> Blackgene Development</h6>
           </div>
         </div>
       </FootWrapper>

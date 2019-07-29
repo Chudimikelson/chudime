@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import {storeProducts, detailProduct} from './data';
+import Sidebar from './components/Sidebar';
 
 const ProductContext = React.createContext();
 //Provider
@@ -11,6 +12,7 @@ class ProductProvider extends Component {
         detailProduct:detailProduct,
         cart: [],
         modalOpen: false,
+        sidebarOpen: false,
         modalProduct: detailProduct,
         cartSubTotal:0,
         cartTax:0,
@@ -35,6 +37,8 @@ class ProductProvider extends Component {
       const product = this.state.products.find(item => item.id ===id);
       return product;
     }
+
+    
 
     handleDetail = id => {
         const product = this.getItem(id);
@@ -61,6 +65,27 @@ class ProductProvider extends Component {
     this.setState(() => {
       return {modalProduct:product, modalOpen:true}
     })
+  };
+  openSidebarClickHandler = () => {
+    
+    this.setState((prevState) => {
+      return {sidebarOpen: !prevState.sidebarOpen};
+    }); 
+  };
+  render() {
+    let sideDrawer;
+    let backdrop;
+
+    if (this.state.sideDrawerOpen) {
+      sideDrawer = <Sidebar/>;
+      
+    }
+    return (
+      <div>
+      <Sidebar drawerClickHandler={this.openSidebarClickHandler} />
+      {sideDrawer}
+    </div>
+    );
   }
   closeModal = () => {
     this.setState(() => {

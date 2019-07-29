@@ -21,9 +21,7 @@ body{
 .text-bright {
   color: var(--lightBlue);
 }
-.navbar {
-  justify-content: flex-start !important;
-}
+
 .btn-black {
   background: transparent;
   text-transform: capitalize;
@@ -49,4 +47,57 @@ body{
 }
 #cartbtn :hover {
   color: palevioletred;
+}
+.ic {
+  background: green;
+  border-radius: 1.5rem;
+}
+.nic {
+  border-radius: 1.5rem;
+  background: #c74d89e3;
+}
+.cart-btn {
+  color: var(--mainWhite);
+  font-size: 1.5rem;
+  
+  width: 100%;
+}
+
+button {
+  background: none;
+  border:none;
+}
+.btc {
+  border-radius: 1.5rem;
+  background: var(--lightBlue);
+}
+.nic:hover {
+  background: green;
+  cursor: pointer;
+}
+
+.paddit {
+  padding-top: 7rem;
+}
+.btc:hover {
+  background: var(--mainBlue);
+  cursor: pointer;
+}
+.text-tit {
+  font-family: "Oswald", sans-serif !important;
+}
+
+.fixed {
+  z-index: 100;
+  background: #fff;
+  position: fixed;
+  top: 0;
+  left:0;
+  right:0;
+  
+}
+
+.psdiv {
+  height: 400px;
+  background: #fff;
 }
