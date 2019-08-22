@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import {storeProducts, detailProduct} from './data';
-import Sidebar from './components/Sidebar';
+
 
 const ProductContext = React.createContext();
 //Provider
@@ -16,7 +16,8 @@ class ProductProvider extends Component {
         modalProduct: detailProduct,
         cartSubTotal:0,
         cartTax:0,
-        cartTotal:0
+        cartTotal:0,
+        shipping:2500
     };
     componentDidMount(){
       this.setProducts();
@@ -66,27 +67,7 @@ class ProductProvider extends Component {
       return {modalProduct:product, modalOpen:true}
     })
   };
-  openSidebarClickHandler = () => {
-    
-    this.setState((prevState) => {
-      return {sidebarOpen: !prevState.sidebarOpen};
-    }); 
-  };
-  render() {
-    let sideDrawer;
-    let backdrop;
-
-    if (this.state.sideDrawerOpen) {
-      sideDrawer = <Sidebar/>;
-      
-    }
-    return (
-      <div>
-      <Sidebar drawerClickHandler={this.openSidebarClickHandler} />
-      {sideDrawer}
-    </div>
-    );
-  }
+  
   closeModal = () => {
     this.setState(() => {
       return {modalOpen:false};
@@ -159,14 +140,16 @@ class ProductProvider extends Component {
   };
   addTotals = () => {
     let subTotal = 0;
+    const shipping = 2500;
     this.state.cart.map( item => (subTotal += item.total));
     const tempTax = subTotal * 0.1;
     const tax = parseFloat(tempTax.toFixed(2));
-    const total = subTotal + tax;
+    const total = subTotal + tax + shipping;
     this.setState(() => {
       return {
         cartSubTotal:subTotal,
         cartTax:tax,
+        shipping:shipping,
         cartTotal:total
       }
     });

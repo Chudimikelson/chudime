@@ -7,8 +7,28 @@ import React, { Component } from 'react';
       
     	state = {
     		key: "pk_test_8d7bbe3cc26423aad8bac6a494d563c1a164f0a1", //PAYSTACK PUBLIC KEY
-    		email: "foobar@example.com",  // customer email
-    		
+        email: "customermail@gmail.com",  // customer email
+        
+    		metadata: {
+          
+          custom_fields: [
+            {
+              display_name:"Cart Items",
+      variable_name:"cart_items",
+      value: 'two oranges, four mangoes'
+            },
+            {
+              display_name:"Delivery Address",
+      variable_name:"delivery_address",
+      value: '5 celestine akpusi crescent, kdc estate'
+            },
+            {
+              display_name:"Customer Phone",
+      variable_name:"customer_phone",
+      value: '08025198576'
+            }
+          ]
+        },
     	}
       
     	callback = (response) => {
@@ -32,22 +52,23 @@ import React, { Component } from 'react';
       render() {
       
         return (
-          <div className="psdiv container">
-            <p>
+          <div>
+            
             <PaystackButton
-                text="Make Payment"
+                text="Checkout"
                 class="payButton"
                 callback={this.callback}
                 close={this.close}
-                disabled={true} 
-                embed={true} 
+                disabled={false} 
+                embed={false} 
                 reference={this.getReference()}
                 email={this.state.email}
+                metadata={this.state.metadata}
                 amount={this.props.total} 
                 paystackkey={this.state.key}
                 tag="button"
               />
-            </p>
+            
           </div>
         );
       }

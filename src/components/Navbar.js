@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 import logo from '../logo.png';
 import styled from 'styled-components';
-import {ButtonContainer} from './Button';
 import Sidebar from './Sidebar';
 
 export default class Navbar extends Component {
@@ -27,7 +26,7 @@ export default class Navbar extends Component {
           
         </div>
         <div className="col-2 text-right pr-0">
-          <Link to="/cart" className="ml-auto">
+          <Link to="/checkout" className="ml-auto">
             <button id="cartbtn">
               <span>
                 <i className="ml-1 fas fa-shopping-cart" />

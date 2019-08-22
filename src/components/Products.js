@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { ProductConsumer } from "../Context";
 import PropTypes from "prop-types";
-import Description from './Description';
 
 export default class Products extends Component {
   render() {
@@ -23,15 +22,15 @@ export default class Products extends Component {
                 {/* <div className="d-flex"><p className="spacer"/>
                 <p className="share mt-3 mb-1 pr-3"><i className="fas fa-heart pr-1 pl-2"></i>Share</p></div> */}
                 <div className="card-footer mt-1 d-flex justify-content-between">
-                  <p className="align-self-center mb-0" style ={{fontSize:"1.5rem"}}>{title}</p>
+                  <h5 className="align-self-center mb-0">{title}</h5>
                   <h5 className="text-blue font-italic mb-0">
-                    <span className="mr-1">&#8358;</span>
+                    <span className="mr-1 align-self-center">&#8358;</span>
                     {price}
                   </h5>
                 </div>
                 
                 <button
-                  className="cart-btn text-center text-tit py-0 px-0 my-2 mx-auto"
+                  className="cart-btn text-center text-tit py-0 my-2"
                   disabled={inCart ? true : false}
                   onClick={() => {
                     value.addToCart(id);
@@ -39,11 +38,11 @@ export default class Products extends Component {
                   }}
                 >
                   {inCart ? (
-                    <p className="ic text-capitalize py-2 mb-0" disabled>
+                    <p className="ic text-capitalize mx-auto py-2 mb-0" disabled>
                       Item added
                     </p>
                   ) : (
-                    <p className= "py-2 nic text-capitalize mb-0"><i className="fas fa-cart-plus pr-3"></i>Add to Cart</p>
+                    <h5 className= "py-2 pr-3 nic mx-auto text-capitalize mb-0"><i className="fas fa-cart-plus px-3"></i>Add to Cart</h5>
                   )}
                 </button>
               </div>
@@ -72,10 +71,10 @@ const ProductWrapper = styled.div`
     box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.5);
   }
   .card-footer {
-    background: #dc359959;
-    border-top: transparent;
-    transition: all 1s linear;
-    
+    background: #fff;
+  }
+  .card-footer h5 {
+    font-size: 0.9rem;
   }
   .img-container {
     position: relative;
