@@ -7,12 +7,12 @@ import Sidebar from './Sidebar';
 export default class Navbar extends Component {
   render() {
     return (
-    <NavWrapper className="navbar navbar-expand-sm navbar-dark px-sm-5">
-      <div className="container-fluid pt-3 px-3  fixed">
-        <div className="col-2 pl-0"> 
+    <NavWrapper className="flex-container px-sm-5">
+      <div className="d-flex justify-content-between pt-3 px-3  fixed">
+        <div className=" pl-0"> 
           <Sidebar/>
         </div>
-        <div className="col-8">
+        <div className="">
           <div className="text-center mx-auto">
             <Link to='/'>
               <img src={logo} alt="store"/>
@@ -25,7 +25,7 @@ export default class Navbar extends Component {
           </div>
           
         </div>
-        <div className="col-2 text-right pr-0">
+        <div className="text-right pr-0">
           <Link to="/checkout" className="ml-auto">
             <button id="cartbtn">
               <span>

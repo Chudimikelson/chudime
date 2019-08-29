@@ -3,11 +3,12 @@ import React, { Component } from 'react';
     import PaystackButton from 'react-paystack';
 
     class App extends Component {
-
       
-    	state = {
+      
+      
+      state = {
     		key: "pk_test_8d7bbe3cc26423aad8bac6a494d563c1a164f0a1", //PAYSTACK PUBLIC KEY
-        email: "customermail@gmail.com",  // customer email
+        email: "customer email",  // customer email
         
     		metadata: {
           
@@ -15,7 +16,7 @@ import React, { Component } from 'react';
             {
               display_name:"Cart Items",
       variable_name:"cart_items",
-      value: 'two oranges, four mangoes'
+      value: this.props.cartItems
             },
             {
               display_name:"Delivery Address",
@@ -29,16 +30,26 @@ import React, { Component } from 'react';
             }
           ]
         },
-    	}
+      }
+    
+      handleEmail = () => {
+        this.setState({email: (this.props.customermail)})
+        // console.log(this.emaill);
+      }
+      
       
     	callback = (response) => {
-    		console.log(response); // card charged successfully, get reference here
+        console.log(response); // card charged successfully, get reference here
+        this.props.clearCart();
+        this.props.history.push('/');
     	}
 
     	close = () => {
     		console.log("Payment closed");
     	}
-
+      clicked = () => {
+        console.log(this.state.email);
+      }
     	getReference = () => {
     		//you can put any unique reference implementation code here
     		let text = "";
@@ -52,9 +63,11 @@ import React, { Component } from 'react';
       render() {
       
         return (
+          
           <div>
-            
+            <div><button onClick={this.clicked}>test</button></div>
             <PaystackButton
+            
                 text="Checkout"
                 class="payButton"
                 callback={this.callback}
@@ -64,7 +77,7 @@ import React, { Component } from 'react';
                 reference={this.getReference()}
                 email={this.state.email}
                 metadata={this.state.metadata}
-                amount={this.props.total} 
+                amount={this.props.total * 100} 
                 paystackkey={this.state.key}
                 tag="button"
               />

@@ -5,7 +5,8 @@ import styled from 'styled-components';
 
 
 export default function CartTotals({value, history}) {
-  const {cartSubTotal,cartTax,cartTotal,clearCart,shipping} = value;
+  const {cartSubTotal,cartTax,cartTotal,clearCart,shipping,cart} = value;
+  
   return (
    <React.Fragment>
      <EmptyWrapper>

@@ -5,21 +5,51 @@ import {ProductConsumer} from '../../Context';
 import EmptyCart from '../Cart/EmptyCart';
 import CartTotals from '../Cart/CartTotals';
 import PaystackPay from '../Cart/PaystackPay';
+
 export default class Checkout extends Component {
+  
+  
+  constructor(props) {
+    super(props)
+    this.superheroElement = React.createRef();
+    this.customerEmail = React.createRef();
+
+    this.state ={
+      emaill:'buzu'
+    }
+  }
+  getEmail = (e) => {
+    e.preventDefault();
+    this.setState ({emaill: this.customerEmail.current.value})
+    
+  };
+  handleHero = () => {
+    this.superheroElement.current.handleEmail();
+  };
   render() {
+    
     return (
+      
       <ProductConsumer>
           {value =>{
-            const {cart} = value;
+            
+            const {cart,cartTotal,clearCart} = value;
+            const cartItems = cart.map(cartItem => cartItem.count + " " + cartItem.title);
+            const maill = this.state.emaill;
             if(cart.length>0){
+              
               return(
+                
      <React.Fragment>
+       
       <div className="paddit">
+      
         <Spaces>
         <div className="container">
           <div className="col-10 mx-auto banner-title text-center">
             <h1 className="text-capitalize">Checkout</h1>
           </div>
+          <form onSubmit={this.getEmail} onBlur={this.handleHero}  >
           <div className="flex-container main">
             <div className="flex-container a">
               <div className="badge bdg" >
@@ -58,10 +88,15 @@ export default class Checkout extends Component {
 
             <div className="flex-container a">
               <div className="paddin" style={{width:'100%'}}  >
+              
                 <h5>Receiver's Name</h5>
                 <input type="text" name="" placeholder="Full Name"/>
                 <h5>E-mail</h5>
-                <input type="" name="" placeholder="chudioselle@gamail.com"/>
+                <h3>value: {this.state.emaill}</h3>
+                  
+                  <input onBlur={this.getEmail} ref={this.customerEmail} className = "email" type="text" placeholder="chudioselle@gamail.com"/>
+                
+                  
                 <h5>Phone Number</h5>
                 <input type="text" name="" placeholder="08025198476"/>
                 <h5>Address</h5>
@@ -79,11 +114,21 @@ export default class Checkout extends Component {
             </div>
            
             <div className="flex-container a">
-            
+          
               <div className="flex-container mx-auto">
-                <button style={{width:'100%'}} className="btn btn-success btn-purchase" type="button"><PaystackPay /></button>
-                <div id="paystack-footer" class="paystack-footer animated fadeIn">
-                  <a target="_blank" href="https://paystack.com/what-is-paystack">
+                <div style={{width:'100%'}} className="btn btn-success btn-purchase" type="button">
+                  <PaystackPay 
+                  
+                  customermail = {maill}
+                  ref = {this.superheroElement}
+                  clearCart={clearCart}
+                  history={this.props.history} 
+                  total={cartTotal} 
+                  cartItems = {cartItems}/>
+                  </div>
+                  
+                <div id="paystack-footer" className="paystack-footer animated fadeIn">
+                  <a target="_blank" rel="noopener noreferrer" href="https://paystack.com/what-is-paystack">
                   <img alt="Paystack secured badge" src="https://paystack.com/assets/payment/img/paystack-badge-cards.png"/>
                   </a>
                 </div>
@@ -93,8 +138,10 @@ export default class Checkout extends Component {
             </div>
             
           </div>
+          </form>
         </div>
         </Spaces>
+        
       </div>
      </React.Fragment>
      );
