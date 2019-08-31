@@ -1,11 +1,9 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
-import PaystackPay from './PaystackPay';
 import styled from 'styled-components';
 
 
 export default function CartTotals({value, history}) {
-  const {cartSubTotal,cartTax,cartTotal,clearCart,shipping,cart} = value;
+  const {cartSubTotal,cartTax,cartTotal,shipping} = value;
   
   return (
    <React.Fragment>

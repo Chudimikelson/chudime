@@ -26,17 +26,19 @@ import React, { Component } from 'react';
             {
               display_name:"Customer Phone",
       variable_name:"customer_phone",
-      value: '08025198576'
+      value: '12345'
             }
           ]
         },
       }
     
       handleEmail = () => {
-        this.setState({email: (this.props.customermail)})
+        this.setState({email: (this.props.customermail)});
         // console.log(this.emaill);
       }
-      
+      // handlePhone = () => {
+      //   this.setState({metadata: (this.props.customerphone)});
+      // }
       
     	callback = (response) => {
         console.log(response); // card charged successfully, get reference here
@@ -49,6 +51,14 @@ import React, { Component } from 'react';
     	}
       clicked = () => {
         console.log(this.state.email);
+        const clone = [...this.state.metadata.custom_fields];
+        let nuts = this.props.customerphone;
+        let address = this.props.customeraddress;
+        clone[2].value = nuts;
+        clone[1].value = address;
+        // console.log(clone);
+        // // this.metadata = clone;
+        console.log(this.state.metadata.custom_fields[2].value);
       }
     	getReference = () => {
     		//you can put any unique reference implementation code here
@@ -63,9 +73,10 @@ import React, { Component } from 'react';
       render() {
       
         return (
-          
-          <div>
+          <React.Fragment>
             <div><button onClick={this.clicked}>test</button></div>
+          <div>
+            
             <PaystackButton
             
                 text="Checkout"
@@ -83,6 +94,7 @@ import React, { Component } from 'react';
               />
             
           </div>
+          </React.Fragment>
         );
       }
     }

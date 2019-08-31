@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import {Button, Modal, ModalHeader, ModalBody} from 'reactstrap';
-import styled from 'styled-components';
+import {Modal, ModalHeader, ModalBody} from 'reactstrap';
 
 export default class Sidebar extends Component {
   constructor (props) {
@@ -31,23 +30,9 @@ export default class Sidebar extends Component {
             <div>contact us</div>
           </ModalBody>
         </Modal>
-        {/* <Menu>
-          <div className="dot">welcome to side menu</div>
-        </Menu> */}
+        
       </div>
     )
   }
 }
- const Menu = styled.div`
- position: fixed;
- left: 0;
- top: 100px;
- background: rgba(0,0,0,0.5);
- width: 100vw;
- height: 80vh;
-
- .dot{
-   color: palevioletred;
- }
-
- `
+ 

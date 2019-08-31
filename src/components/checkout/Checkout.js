@@ -12,19 +12,33 @@ export default class Checkout extends Component {
   constructor(props) {
     super(props)
     this.superheroElement = React.createRef();
+    this.customerAddress = React.createRef();
     this.customerEmail = React.createRef();
+    this.customerPhone = React.createRef();
 
     this.state ={
-      emaill:'buzu'
+      fullname:'',
+      emaill:'buzu',
+      phone:'0512',
+      address:''
     }
   }
+  getAddress = (e) => {
+    e.preventDefault();
+    this.setState ({address: this.customerAddress.current.value})
+  };
   getEmail = (e) => {
     e.preventDefault();
     this.setState ({emaill: this.customerEmail.current.value})
+  };
+  getPhone = (e) => {
+    e.preventDefault();
+    this.setState ({phone: this.customerPhone.current.value})
     
   };
   handleHero = () => {
     this.superheroElement.current.handleEmail();
+    // this.superheroElement.current.handlePhone();
   };
   render() {
     
@@ -36,6 +50,8 @@ export default class Checkout extends Component {
             const {cart,cartTotal,clearCart} = value;
             const cartItems = cart.map(cartItem => cartItem.count + " " + cartItem.title);
             const maill = this.state.emaill;
+            const phone = this.state.phone;
+            const customerAddress = this.state.address;
             if(cart.length>0){
               
               return(
@@ -89,18 +105,18 @@ export default class Checkout extends Component {
             <div className="flex-container a">
               <div className="paddin" style={{width:'100%'}}  >
               
-                <h5>Receiver's Name</h5>
-                <input type="text" name="" placeholder="Full Name"/>
-                <h5>E-mail</h5>
-                <h3>value: {this.state.emaill}</h3>
+                <h5>Receiver's Name: {this.state.fullname}</h5>
+                <input onBlur={this.getFullname} ref={this.customerName} type="text" name="" placeholder="Full Name"/>
+                <h5>E-mail: {this.state.emaill}</h5>
+                
                   
                   <input onBlur={this.getEmail} ref={this.customerEmail} className = "email" type="text" placeholder="chudioselle@gamail.com"/>
                 
                   
-                <h5>Phone Number</h5>
-                <input type="text" name="" placeholder="08025198476"/>
+                <h5>Phone Number: {this.state.phone}</h5>
+                <input onBlur={this.getPhone} ref = {this.customerPhone} type="text" name="" placeholder="08025198476"/>
                 <h5>Address</h5>
-                <input className="addressfield" type="" name=""/>
+                <input onBlur={this.getAddress} ref={this.customerAddress} className="addressfield" type="" name=""/>
               </div>
             </div>
 
@@ -118,8 +134,9 @@ export default class Checkout extends Component {
               <div className="flex-container mx-auto">
                 <div style={{width:'100%'}} className="btn btn-success btn-purchase" type="button">
                   <PaystackPay 
-                  
+                  customerphone = {phone}
                   customermail = {maill}
+                  customeraddress = {customerAddress}
                   ref = {this.superheroElement}
                   clearCart={clearCart}
                   history={this.props.history} 
