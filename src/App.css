@@ -77,7 +77,7 @@ body{
   background: transparent;
   border: none;
   outline: none;
-  font-size: 1.4rem;
+  /* font-size: 1.4rem; */
 }
 #cartbtn :hover {
   color: palevioletred;
@@ -122,8 +122,15 @@ button {
   cursor: pointer;
 }
 
+.carousel-item img {
+  width: 360px;
+  height:450px;
+  max-height: 500px !important;
+  max-width: 30%;
+  margin: 0 auto;
+}
 .paddit {
-  padding-top: 7rem;
+  padding-top: 5rem;
 }
 .btc:hover {
   background: var(--mainBlue);
@@ -133,6 +140,9 @@ button {
   font-family: "Oswald", sans-serif !important;
 }
 
+.img-container {
+  padding: .5rem;
+}
 .fixed {
   z-index: 100;
   background: #fff;
@@ -146,4 +156,48 @@ button {
 .psdiv {
   height: 400px;
   background: #fff;
+}
+
+@media screen and (max-width:769px) {
+  .main-menu {
+    display:none;
+  }  
+  .card-img-top {
+    height:21rem;
+  }
+}
+
+@media screen and (min-width:1000px) {
+
+  .card-img-top {
+    
+    height: 220px !important;
+    padding: 0 .5rem 0 .5rem !important;
+  }
+  .img-container {
+    padding: .8rem;
+  }
+  .card {
+    margin: 0 auto !important;
+    height:320px;
+    width: 100%;
+    box-shadow: none !important;
+  }
+  .mdq-lg {
+    margin-top: 0 !important;
+    display: flex;
+    justify-content: center;
+    margin: 5px !important;
+    padding: 0 !important;
+  }
+  .cart-btn {
+    margin: 0 auto;
+  }
+  .flex-containerz {
+    display: flex;
+    flex-wrap: wrap;
+    background: #fff;
+    margin: 16px !important;
+    justify-content: space-between !important;
+  }
 }

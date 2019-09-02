@@ -18,8 +18,8 @@ export default class Checkout extends Component {
 
     this.state ={
       fullname:'',
-      emaill:'buzu',
-      phone:'0512',
+      emaill:'',
+      phone:'',
       address:''
     }
   }
@@ -79,20 +79,6 @@ export default class Checkout extends Component {
             
             <CartTotals value={value} history={this.props.history} />
 
-            {/* <div className="flex-container a justify-content-between ml-5">
-              <div className="text-capitalize px-2"><h4>Item</h4>
-                <p>
-                  <h5>estelle black soap</h5>
-                  <h5>Price
-                      <span>N3500</span>
-                      <span>Qty<span>2</span></span>
-                  </h5>
-                </p>
-                <h5>melanin radiance lotion</h5>
-                <h5>turmeric soap</h5>
-              </div>
-            </div> */}
-
             <div className="flex-container a">
               <div className="badge bdg align-self-center" >
                 <h2 className="pt-2">2</h2>
@@ -134,6 +120,7 @@ export default class Checkout extends Component {
               <div className="flex-container mx-auto">
                 <div style={{width:'100%'}} className="btn btn-success btn-purchase" type="button">
                   <PaystackPay 
+                  key={cartItems}
                   customerphone = {phone}
                   customermail = {maill}
                   customeraddress = {customerAddress}

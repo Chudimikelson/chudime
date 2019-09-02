@@ -16,7 +16,7 @@ import React, { Component } from 'react';
             {
               display_name:"Cart Items",
       variable_name:"cart_items",
-      value: this.props.cartItems
+      value: this.props.cartItems.toString()
             },
             {
               display_name:"Delivery Address",

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
+import {Link} from 'react-router-dom';
 import {Modal, ModalHeader, ModalBody} from 'reactstrap';
-
+import styled from 'styled-components';
 export default class Sidebar extends Component {
   constructor (props) {
     super(props);
@@ -25,9 +26,24 @@ export default class Sidebar extends Component {
         <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
           <ModalHeader toggle={this.toggle}>Menu</ModalHeader>
           <ModalBody>
-            <div>skincare</div>
-            <div>about</div>
-            <div>contact us</div>
+          <NavWrapper>
+          <div className="flex-container">
+        <ul className="d-flex menu pr-2 navbar-nav mx-auto text-capitalize">
+        <li className="nav-item active">
+            <Link to="/" onClick={this.toggle} className="nav-link">home</Link>
+          </li>
+          <li className="nav-item">
+          <Link to="/"className="nav-link">Shop</Link>
+          </li>
+          <li className="nav-item">
+          <Link to="/"className="nav-link">About</Link>
+          </li>
+          <li className="nav-item">
+          <Link to="/"className="nav-link">Contact Us</Link>
+          </li>
+        </ul>
+        </div>
+        </NavWrapper>
           </ModalBody>
         </Modal>
         
@@ -36,3 +52,25 @@ export default class Sidebar extends Component {
   }
 }
  
+const NavWrapper = styled.nav`
+background: #fff;
+.nav-link {
+    color: palevioletred!important;
+    font-size: 1.3rem;
+    text-transform: capitalize;
+}
+.mylogo  {
+  height: 2rem;
+  width: 9rem;
+}
+
+#menuBar {
+  font-size: 1.2rem;
+  background-color: transparent;
+  border:none;
+  outline:none;
+}
+.fa-shopping-cart {
+  font-size: 1.2rem;
+}
+`
