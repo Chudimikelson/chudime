@@ -51,18 +51,17 @@ import React, { Component } from 'react';
     		console.log("Payment closed");
     	}
       clicked = () => {
-        const lone = [...this.state.email];
-        let mail = this.props.customermail;
-        lone.value = mail;
         const clone = [...this.state.metadata.custom_fields];
         let nuts = this.props.customerphone;
         let address = this.props.customeraddress;
         clone[2].value = nuts;
         clone[1].value = address;
+        let mail = this.props.customermail;
+        this.state.email = mail;
         // console.log(clone);
         // // this.metadata = clone;
         console.log(this.state.metadata.custom_fields[0].value);
-        console.log(mail);
+        console.log(this.state.email);
         console.log(this.state.metadata.custom_fields[2].value);
         console.log(this.state.metadata.custom_fields[1].value);
       }

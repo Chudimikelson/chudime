@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 
 export default function CartTotals({value, history}) {
-  const {cartSubTotal,cartTax,cartTotal,shipping} = value;
+  const {cartSubTotal,cartTotal,shipping} = value;
   
   return (
    <React.Fragment>
@@ -18,10 +18,10 @@ export default function CartTotals({value, history}) {
              <span className="text-capitalize">sub total :</span>
              <strong><span className="mr-1">&#8358;</span> {cartSubTotal} </strong>
            </h5>
-           <h5>
+           {/* <h5>
              <span className="text-capitalize">tax :</span>
              <strong><span className="mr-1">&#8358;</span> {cartTax} </strong>
-           </h5>
+           </h5> */}
            <h5>
              <span className="text-capitalize">Shipping :</span>
              <strong><span className="mr-1">&#8358;</span> {shipping} </strong>

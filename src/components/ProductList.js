@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Products from './Products';
 import Title from './Title';
 import {ProductConsumer} from '../Context';
-import Banner from './Banner';
+
 export default class ProductList extends Component {
   
   render() {

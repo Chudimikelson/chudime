@@ -1,6 +1,5 @@
 import React from 'react'
 import Title from './Title';
-import styled from 'styled-components';
 import imgae from '../photos/mrl.jpg';
 export default function Bestsellers() {
   return (
