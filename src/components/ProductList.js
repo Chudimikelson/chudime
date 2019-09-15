@@ -9,9 +9,9 @@ export default class ProductList extends Component {
     return (
       <React.Fragment>
         <div className="pb-3">
-          <div className="d-none"><Banner style={{height:200}}/></div>
+         
           <div className="container-fluid mx-auto">
-            <Title name="our" title="products"/>
+            <Title name="all" title="products"/>
             
             <div className="flex-containerz">
               <ProductConsumer>

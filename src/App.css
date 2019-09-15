@@ -1,7 +1,7 @@
 :root{
   --mainBlue:#2a2a72;
   --lightBlue:#009ffd;
-  --mainWhite:#f3f3f3;
+  --mainWhite:#fff;
   --mainDark:#232528;
   --mainYellow:#ffa400;
 }
@@ -152,7 +152,25 @@ button {
   right:0;
   
 }
-
+.card {
+  margin-bottom: .7rem;
+}
+.col-12 {
+  padding-left:0 !important;
+  padding-right:0 !important;
+}
+.ban {
+ padding: 0 !important;
+  background: #f3f3f3;
+  
+}
+.carousel-item img {
+  
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  
+  
+}
 .psdiv {
   height: 400px;
   background: #fff;

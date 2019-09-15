@@ -21,21 +21,22 @@ import React, { Component } from 'react';
             {
               display_name:"Delivery Address",
       variable_name:"delivery_address",
-      value: '5 celestine akpusi crescent, kdc estate'
+      value: 'Please fill this'
             },
             {
               display_name:"Customer Phone",
       variable_name:"customer_phone",
-      value: '12345'
+      value: 'Please fill this'
             }
           ]
         },
       }
     
-      handleEmail = () => {
-        this.setState({email: (this.props.customermail)});
-        // console.log(this.emaill);
-      }
+      // handleEmail = () => {
+      //   this.setState({email: (this.props.customermail)});
+        
+      //   // console.log(this.emaill);
+      // }
       // handlePhone = () => {
       //   this.setState({metadata: (this.props.customerphone)});
       // }
@@ -50,7 +51,9 @@ import React, { Component } from 'react';
     		console.log("Payment closed");
     	}
       clicked = () => {
-        console.log(this.state.email);
+        const lone = [...this.state.email];
+        let mail = this.props.customermail;
+        lone.value = mail;
         const clone = [...this.state.metadata.custom_fields];
         let nuts = this.props.customerphone;
         let address = this.props.customeraddress;
@@ -58,9 +61,13 @@ import React, { Component } from 'react';
         clone[1].value = address;
         // console.log(clone);
         // // this.metadata = clone;
+        console.log(this.state.metadata.custom_fields[0].value);
+        console.log(mail);
         console.log(this.state.metadata.custom_fields[2].value);
+        console.log(this.state.metadata.custom_fields[1].value);
       }
     	getReference = () => {
+        this.clicked();
     		//you can put any unique reference implementation code here
     		let text = "";
         let possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-.=";
@@ -74,11 +81,11 @@ import React, { Component } from 'react';
       
         return (
           <React.Fragment>
-            <div><button onClick={this.clicked}>test</button></div>
+            
           <div>
             
             <PaystackButton
-            
+                
                 text="Checkout"
                 class="payButton"
                 callback={this.callback}

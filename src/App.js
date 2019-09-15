@@ -10,6 +10,7 @@ import Checkout from './components/checkout/Checkout';
 import Default from './components/Default';
 import Modal from './components/Modal';
 import Footer from './components/Footer';
+import Home from './components/Home';
 
 class App extends Component {
   render() {
@@ -21,6 +22,7 @@ class App extends Component {
           <Route path="/details" component={Details} />
           <Route path="/cart" component={Cart} />
           <Route path="/checkout" component={Checkout} />
+          <Route path="/home" component={Home}/>
           <Route component={Default} />
         </Switch>
         <Modal/>

@@ -36,10 +36,10 @@ export default class Checkout extends Component {
     this.setState ({phone: this.customerPhone.current.value})
     
   };
-  handleHero = () => {
-    this.superheroElement.current.handleEmail();
-    // this.superheroElement.current.handlePhone();
-  };
+  // handleHero = () => {
+  //   this.superheroElement.current.handleEmail();
+  //   // this.superheroElement.current.handlePhone();
+  // };
   render() {
     
     return (
@@ -91,21 +91,20 @@ export default class Checkout extends Component {
             <div className="flex-container a">
               <div className="paddin" style={{width:'100%'}}  >
               
-                <h5>Receiver's Name: {this.state.fullname}</h5>
+                <h5>Receiver's Name</h5>
                 <input onBlur={this.getFullname} ref={this.customerName} type="text" name="" placeholder="Full Name"/>
-                <h5>E-mail: {this.state.emaill}</h5>
+                <h5>E-mail</h5>
                 
                   
                   <input onBlur={this.getEmail} ref={this.customerEmail} className = "email" type="text" placeholder="chudioselle@gamail.com"/>
                 
                   
-                <h5>Phone Number: {this.state.phone}</h5>
+                <h5>Phone Number</h5>
                 <input onBlur={this.getPhone} ref = {this.customerPhone} type="text" name="" placeholder="08025198476"/>
                 <h5>Address</h5>
                 <input onBlur={this.getAddress} ref={this.customerAddress} className="addressfield" type="" name=""/>
               </div>
             </div>
-
             <div className="flex-container a">
               <div className="badge bdg" >
                 <h2 className="pt-2">3</h2>
@@ -157,7 +156,6 @@ export default class Checkout extends Component {
     )
   }
 }
-
 const Spaces = styled.div `
 .flex-container.main {
 	display: flex;
@@ -177,7 +175,6 @@ const Spaces = styled.div `
 	width: 60px;
 	margin-right: 10px;
 }
-
 .paddin input {
 	padding: 5px;
 	width: 100%;
@@ -185,7 +182,6 @@ const Spaces = styled.div `
 	border: 0.5px lightgrey solid;
 	border-radius: 3px;
 }
-
 .paddin h5 {
 	margin-bottom: 2px; 
 	margin-top: 10px;
