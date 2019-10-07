@@ -155,10 +155,10 @@ button {
 .card {
   margin-bottom: .7rem;
 }
-.col-12 {
+/* .col-12 {
   padding-left:0 !important;
   padding-right:0 !important;
-}
+} */
 .ban {
  padding: 0 !important;
   background: #f3f3f3;
@@ -171,13 +171,27 @@ button {
   
   
 }
+.nav-item a {
+  color: palevioletred !important;
+}
+/* .bbn {
+  background-color: palevioletred !important;
+} */
 .psdiv {
   height: 400px;
   background: #fff;
 }
 
+.ebs-img {
+  background-image: url(./photos/ceo-1.png);
+}
+
+.sbc, .bestsellers {
+  margin-bottom: 1rem;
+}
+
 @media screen and (max-width:769px) {
-  .main-menu {
+  .main-menu, .bbn {
     display:none;
   }  
   .card-img-top {
@@ -196,7 +210,7 @@ button {
     padding: .8rem;
   }
   .card {
-    margin: 0 auto !important;
+    margin: 1rem auto !important;
     height:320px;
     width: 100%;
     box-shadow: none !important;
@@ -217,5 +231,9 @@ button {
     background: #fff;
     margin: 16px !important;
     justify-content: space-between !important;
+  }
+  .sbc {
+    margin-top: 10%;
+    margin-bottom: 1rem;
   }
 }

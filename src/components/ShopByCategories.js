@@ -1,46 +1,48 @@
 import React from 'react';
-import Title from './Title';
 import styled from 'styled-components';
+import ceoPic from '../photos/ceo-1.png';
 
 export default function ShopByCategories() {
   return (
-    <div>
-      <Sbc>
-      <Title name="Shop Categories" title=""/>
-        <div className="flex-container">
-      <div id="categories" className="container text-center jumbotron flex-container">
+    <Sbc>
+      
+        <div className="sbc text-center text-title">
+          <h2>Shop by Category</h2>
+        </div>
+      
+        <div className="container mx-auto flex-containerz">
+      
 
-<div className="col-12 col-lg-6">
-  <p>face</p>
+<div className="card px-1 col-lg-6">
+
+              
+              <img className="img-fluid" style={{height:350}}  src={ceoPic}  alt="glow body lotion"/>
+              <div className="finess mx-auto"><button className="btn px-5 py-1 text-center text-capitalize mb-2">face</button>
+              </div>
+                
+              
 </div>
-<div className="col-12 col-lg-6">
-  <p>body</p>
+<div className="card px-1 col-lg-6"><img className="img-fluid" alt="" style={{height:350}}  src={ceoPic} />
+<div className="finess mx-auto"><button className="btn px-5 py-1 text-center text-capitalize mb-2">body</button>
+              </div>
 </div>
-<div className="col-12">
-  <p>anti-age</p>
+<div className="card px-1 col-lg-6"><img className="img-fluid" alt="" style={{height:350}}  src={ceoPic} />
+<div className="finess mx-auto"><button className="btn px-5 py-1 text-center text-capitalize mb-2">anti-age</button>
+              </div>
 </div>
-<div className="col-12 col-lg-6">
-  <p>care sets</p>
-</div>
-<div className="col-12 col-lg-6">
-  <p>kids</p>
+<div className="card px-1 col-lg-6"><img className="img-fluid" alt="" style={{height:350}}  src={ceoPic} />
+<div className="finess mx-auto"><button className="btn py-1 px-5 text-center text-capitalize mb-2">care-sets</button>
+              </div>
 </div>
 
-</div>
+
 </div>
 </Sbc>
-    </div>
+    
   )
 }
 
 const Sbc = styled.div `
-.menubar {
-  display: flex;
-  justify-content: space-between;
-}
-.outline p {
-  border: 0.5px grey solid;
-}
 
 .flex-container {
   justify-content: center;
@@ -49,15 +51,24 @@ const Sbc = styled.div `
   flex-wrap: wrap;
   /* flex-direction: column; */
 }
-#categories p {
-  align-self: center;
-  background-color: #fff;
-  height: 5rem;
+
+.finess {
+  position: relative;
+  bottom: 10rem;
+  left:0;
 }
-.footer {
-  background-color: lightgrey;
-  margin-top: 1rem;
-  padding-top: 30px;
-  padding-bottom: 10px;
+.btn {
+  width:100%; 
+  font-size: 1.5rem;
+  background: rgba(250,248,250, 0.5);
+}
+.btn:hover {
+  background: #28a745;
+}
+.card {
+  border: none;
+}
+img {
+  border-radius: .5rem;
 }
 `

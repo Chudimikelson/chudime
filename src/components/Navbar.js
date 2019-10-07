@@ -3,13 +3,19 @@ import {Link} from 'react-router-dom';
 import logo from '../logooo.png';
 import styled from 'styled-components';
 import Sidebar from './Sidebar';
+import Menubar from './Menubar';
 
 export default class Navbar extends Component {
   render() {
     return (
-    <NavWrapper className="flex-container px-sm-5">
+      <React.Fragment>
+        
+      <div className="bbn fixed">
+        <Menubar/>
+      </div>
+    <NavWrapper className="d-lg-none flex-container px-sm-5">
       <div className="d-flex justify-content-between p-3  fixed">
-        <div className="d-lg-none pl-0"> 
+        <div className="pl-0"> 
           <Sidebar/>
         </div>
         <div className="">
@@ -28,7 +34,7 @@ export default class Navbar extends Component {
         <div className="main-menu flex-container">
         <ul className="d-flex menu pr-2 navbar-nav mx-auto text-capitalize">
           <li className="nav-item active">
-            <Link to="/"className="nav-link">home</Link>
+            <Link to="/home"className="nav-link">home</Link>
           </li>
           <li className="nav-item">
           <Link to="/"className="nav-link">Shop</Link>
@@ -52,6 +58,7 @@ export default class Navbar extends Component {
         </div>
       </div>
     </NavWrapper>
+      </React.Fragment>
     );
   }
 }

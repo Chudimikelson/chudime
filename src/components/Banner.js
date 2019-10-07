@@ -1,28 +1,50 @@
-import React from 'react';
-import { UncontrolledCarousel } from 'reactstrap';
+import React from "react";
+import { MDBCarousel, MDBCarouselInner, MDBCarouselItem, MDBView, MDBContainer } from
+"mdbreact";
 
+const CarouselPage = () => {
+  return (
+    <MDBContainer>
+      <MDBCarousel
+        activeItem={1}
+        length={3}
+        showControls={false}
+        showIndicators={false}
+        className="z-depth-1"
+        slide
+      >
+        <MDBCarouselInner>
+          <MDBCarouselItem itemId="1">
+            <MDBView>
+              <img
+                className="d-block w-100"
+                src="https://mdbootstrap.com/img/Photos/Slides/img%20(35).jpg"
+                alt="First slide"
+              />
+            </MDBView>
+          </MDBCarouselItem>
+          <MDBCarouselItem itemId="2">
+            <MDBView>
+              <img
+                className="d-block w-100"
+                src="https://mdbootstrap.com/img/Photos/Slides/img%20(33).jpg"
+                alt="Second slide"
+              />
+            </MDBView>
+          </MDBCarouselItem>
+          <MDBCarouselItem itemId="3">
+            <MDBView>
+              <img
+                className="d-block w-100"
+                src="https://mdbootstrap.com/img/Photos/Slides/img%20(31).jpg"
+                alt="Third slide"
+              />
+            </MDBView>
+          </MDBCarouselItem>
+        </MDBCarouselInner>
+      </MDBCarousel>
+    </MDBContainer>
+  );
+}
 
-const items = [
-  {
-    src: 'https://github.com/Chudimikelson/etoile_photos/blob/master/mrl.jpg?raw=true',
-    altText: 'Slide 1',
-    caption: 'Slide 1',
-    header: 'Slide 1 Header'
-  },
-  {
-    src: 'https://github.com/Chudimikelson/etoile_photos/blob/master/face%20set.png?raw=true',
-    altText: 'Slide 2',
-    caption: 'Slide 2',
-    header: 'Slide 2 Header'
-  },
-  {
-    src: 'https://github.com/Chudimikelson/etoile_photos/blob/master/body%20glow%20set.jpg?raw=true',
-    altText: 'Slide 3',
-    caption: 'Slide 3',
-    header: 'Slide 3 Header'
-  }
-];
-
-const Banner = () => <UncontrolledCarousel items={items} />;
-
-export default Banner;
+export default CarouselPage;
