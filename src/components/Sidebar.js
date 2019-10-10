@@ -24,7 +24,7 @@ export default class Sidebar extends Component {
         <span id='menubaricon' ><i className="fas fa-bars"></i></span>
         </button>
         <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
-          <ModalHeader toggle={this.toggle}>Menu</ModalHeader>
+          <ModalHeader toggle={this.toggle}>Etoile Beauty</ModalHeader>
           <ModalBody>
           <NavWrapper>
           <div className="flex-container">
@@ -33,7 +33,7 @@ export default class Sidebar extends Component {
             <Link to="/" onClick={this.toggle} className="nav-link">home</Link>
           </li>
           <li className="nav-item">
-          <Link to="/"className="nav-link">Shop</Link>
+          <Link to="/shop" onClick={this.toggle} className="nav-link">Shop</Link>
           </li>
           <li className="nav-item">
           <Link to="/"className="nav-link">About</Link>

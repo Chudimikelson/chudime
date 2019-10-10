@@ -186,7 +186,7 @@ button {
   background-image: url(./photos/ceo-1.png);
 }
 
-.sbc, .bestsellers {
+.sbc {
   margin-bottom: 1rem;
 }
 
@@ -211,8 +211,6 @@ button {
   }
   .card {
     margin: 1rem auto !important;
-    
-    width: 100%;
     box-shadow: none !important;
   }
   .mdq-lg {
@@ -233,7 +231,6 @@ button {
     justify-content: space-between !important;
   }
   .sbc {
-    margin-top: 10%;
     margin-bottom: 1rem;
   }
 }
