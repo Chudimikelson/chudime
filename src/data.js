@@ -101,6 +101,7 @@ export const storeProducts = [
   },
   {
     id: 9,
+    bs: 3,
     title: "Radiant Face Milk",
     img: "img/rfm.jpg",
     price: 2500,
@@ -114,6 +115,7 @@ export const storeProducts = [
   
   {
     id: 10,
+    bs: 2,
     title: "Body Glow Set",
     img: "img/body glow set.jpg",
     price: 5000,
@@ -126,6 +128,7 @@ export const storeProducts = [
   },
   {
     id: 11,
+    bs: 1,
     title: "Face Set",
     img: "img/face set.jpg",
     price: 5000,
@@ -151,10 +154,53 @@ export const detailProduct = {
   total: 0
 };
 
-export const categoryProduct = {
-  id:1,
-  img: "",
-  price: 100,
+export const bestsellerProducts = [
+{
+  id: 1,
+  title: "Estelle Black Soap",
+  img: "img/EBS-2.png",
+  price: 3500,
+  company: "Etoile Beauty Nig",
+  info:
+    "Body soap",
+  inCart: false,
   count: 0,
   total: 0
-};
+},
+{
+  id: 2,
+  title: "Shea glow oil",
+  img: "img/EBS-2.png",
+  price: 3500,
+  company: "Etoile Beauty Nig",
+  info:
+    "Body oil",
+  inCart: false,
+  count: 0,
+  total: 0
+},
+{
+  id: 3,
+  title: "Radiant Face Soap",
+  img: "img/face soap.jpg",
+  price: 2500,
+  company: "Etoile Beauty Nig",
+  info:
+    "face soap",
+  inCart: false,
+  count: 0,
+  total: 0
+},
+{
+  id: 4,
+  title: "Shea Glow Oil",
+  img: "img/SGO.jpg",
+  price: 2500,
+  company: "Etoile Beauty Nig",
+  info:
+    "body oil.",
+  inCart: false,
+  count: 0,
+  total: 0
+}
+];

@@ -1,63 +1,53 @@
-import React from 'react'
-import ebs from '../photos/ebs.png';
-import lrl from '../photos/lrl.jpg';
-import sgo from '../photos/sgo.jpg';
-import ts from '../photos/TS.png';
-import styled from 'styled-components';
+import React, { Component } from "react";
+import styled from "styled-components";
+import { Link } from "react-router-dom";
+import { ProductConsumer } from "../Context";
+import PropTypes from "prop-types";
 
-export default function Bestsellers() {
-  return (
-    <div className="container">
-      <div className="paddit bestsellers text-center text-title">
-        <h2>Best Sellers</h2>
-      </div>
-            <Btn>
-            <div className="flex-containerz">
-              <div className="card px-1 col-lg-3">
-              
-              <img src={ebs} style={{height:300}}  alt="glow body lotion"/>
-              <div className="finess mx-auto"><button className="btn py-1 text-center text-capitalize">add to cart</button>
-              </div>
-              <div className="justify-content-between cxx">
-                  <h5 className="text-center mb-0">Estelle Black Soap</h5>
-                  <h5 className="text-center mb-0">Body Soap</h5>
-                  <h5 className="text-center font-italic mb-0"><span className="px-1 align-self-center">&#8358;</span>3500</h5>
-                </div>
-                
-              </div>
-              <div className="card px-1 col-lg-3">
-              <img style={{height:300}} src={lrl} alt="glow body lotion"/>
-              <div className="finess mx-auto"><button className="btn py-1 text-center text-capitalize">add to cart</button></div>
-              <div className="justify-content-between cxx">
-                  <h5 className="text-center mb-0">Light Radiance</h5>
-                  <h5 className="text-center mb-0">Body Lotion</h5>
-                  <h5 className="text-center font-italic mb-0"><span className="px-1 align-self-center">&#8358;</span>4500</h5>
-                </div>
-              </div>
-              <div className="card px-1 col-lg-3">
-              <img style={{height:300}} src={sgo} alt="glow body lotion"/>
-              <div className="finess mx-auto"><button className="btn py-1 text-center text-capitalize">add to cart</button></div>
-              <div className="justify-content-between cxx">
-                  <h5 className="text-center mb-0">Shea Glo Oil</h5>
-                  <h5 className="text-center mb-0">Body Oil</h5>
-                  <h5 className="text-center mb-0"><span className="px-1 align-self-center">&#8358;</span>3500</h5>
-                </div>
-              </div>
-              <div className="card px-1 col-lg-3">
-              <img style={{height:300}} src={ts} alt="turmeric soap"/>
-              <div className="finess mx-auto"><button className="btn py-1 text-center text-capitalize">add to cart</button>
-              </div>
-              <div className="justify-content-between cxx">
-                  <h5 className="text-center mb-0">Turmeric Soap</h5>
-                  <h5 className="text-center mb-0">Body Soap</h5>
-                  <h5 className="text-center mb-0"><span className="px-1 align-self-center">&#8358;</span>3500</h5>
-                </div>
-              </div>
-            </div>
-            </Btn>
-    </div>
-  )
+export default class Bestsellers extends Component {
+  render() {
+    const { id, info, title, img, price, inCart } = this.props.bestseller;
+    return (
+      
+      <Btn className="col-lg-3">
+        <div>
+        <ProductConsumer>
+            {value => (
+              <div className="card">
+                 <img src={img} style={{height:300}}  alt="glow body lotion"/>
+                  <div className="finess mx-auto">
+                    <button className="btn py-1 text-center text-capitalize"
+                      onClick={() => {
+                        value.addBsToCart(id);
+                      }}
+                      >add to cart</button>
+                  </div>
+                  <div className="justify-content-between cxx">
+                    <h5 className="text-center mb-0">{title}</h5>
+                    <h5 className="text-center mb-0">{info}</h5>
+                    <h5 className="text-center font-italic mb-0">
+                      <span className="px-1 align-self-center">&#8358;</span>{price}
+                    </h5>
+                  </div>
+              </div>  
+            )}
+          </ProductConsumer>
+          </div>
+        </Btn>
+        
+    );
+  }
 }
+
+Bestsellers.propTypes = {
+  bestseller: PropTypes.shape({
+    id: PropTypes.number,
+    img: PropTypes.string,
+    title: PropTypes.string,
+    price: PropTypes.number,
+    inCart: PropTypes.bool
+  }).isRequired
+};
 
 const Btn = styled.div `
 .finess {

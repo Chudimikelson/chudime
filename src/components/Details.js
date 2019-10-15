@@ -12,19 +12,17 @@ export default class Details extends Component {
           return (
             <EmptyWrapper>
               <div className="container paddit">
-              {/** title */}
-              <div className="row">
+                <div className="row">
                 <div className="col-10 mx-auto text-center text-slanted text-blue my-1">
                   <h1>{title}</h1>
                 </div>
               </div>
-              {/** end title */}
-              {/** product info */}
+              
               <div className="row">
                 <div className="col-10 mx-auto col-md-6 my-3">
                   <img src={img} className="img-fluid" alt="product"/>
                 </div>
-                {/** product text */}
+                
                 <div className="col-10 mx-auto col-md-6 my-3 text-capitalize">
                   <h2> category: {title}</h2>
                   <h4 className="text-blue">

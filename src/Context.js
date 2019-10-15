@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {storeProducts, detailProduct} from './data';
+import {storeProducts, detailProduct, bestsellerProducts} from './data';
 
 
 const ProductContext = React.createContext();
@@ -9,6 +9,7 @@ const ProductContext = React.createContext();
 class ProductProvider extends Component {
     state ={
         products: [],
+        bestsellers: [],
         detailProduct:detailProduct,
         cart: [],
         modalOpen: false,
@@ -21,22 +22,38 @@ class ProductProvider extends Component {
     };
     componentDidMount(){
       this.setProducts();
+      this.setBestsellers();
     }
     setProducts = () => {
       let tempProducts = [];
       storeProducts.forEach(item => {
         const singleItem = {...item};
         tempProducts = [...tempProducts, singleItem];
-
-      })
+      });
       this.setState(() => {
         return {products: tempProducts};
+      });
+    };
+
+    setBestsellers = () => {
+      let tempBestsellerProducts = [];
+      bestsellerProducts.forEach(item => {
+        const oneItem = {...item};
+        tempBestsellerProducts = [...tempBestsellerProducts, oneItem];
+      });
+      this.setState(() => {
+        return {bestsellers: tempBestsellerProducts};
       });
     };
 
     getItem = (id) => {
       const product = this.state.products.find(item => item.id ===id);
       return product;
+    }
+
+    getbestsellers = (id) => {
+      const bs = this.state.bestsellers.find(item => item.id === id);
+      return bs;
     }
 
     
@@ -61,7 +78,23 @@ class ProductProvider extends Component {
           this.addTotals();
         });
     };
-  openModal = id => {
+
+    addBsToCart = (id) => {
+      let tempBestsellerProducts = [...this.state.bestsellers];
+      const index = tempBestsellerProducts.indexOf(this.getbestsellers(id));
+      const bestseller = tempBestsellerProducts[index];
+      bestseller.inCart = true;
+      bestseller.count = 1;
+      const price = bestseller.price;
+      bestseller.total = price;
+      this.setState(() => {
+        return {bestsellers:tempBestsellerProducts, cart:[...this.state.cart, bestseller]};
+      }, () => {
+        this.addTotals();
+      });
+  };
+    
+    openModal = id => {
     const product = this.getItem(id);
     this.setState(() => {
       return {modalProduct:product, modalOpen:true}
@@ -113,6 +146,8 @@ class ProductProvider extends Component {
   };
   removeItem = (id) => {
     let tempProducts = [...this.state.products];
+    let tempBestsellerProducts = [...this.state.bestsellers];
+
     let tempCart = [...this.state.cart];
     tempCart = tempCart.filter(item => item.id!==id);
 
@@ -122,10 +157,17 @@ class ProductProvider extends Component {
     removedProduct.count = 0;
     removedProduct.total = 0;
 
+    const position = tempBestsellerProducts.indexOf(this.getbestsellers(id));
+    let removedproduct = tempBestsellerProducts[position];
+    removedproduct.inCart = false;
+    removedproduct.count = 0;
+    removedproduct.total = 0;
+
     this.setState(() => {
       return {
         cart:[...tempCart],
-        products:[...tempProducts]
+        products:[...tempProducts],
+        bestsellers: [...tempBestsellerProducts]
       };
     }, () => {this.addTotals();
     });
@@ -159,6 +201,7 @@ class ProductProvider extends Component {
             <ProductContext.Provider value={{...this.state,
                 handleDetail:this.handleDetail,
                 addToCart:this.addToCart,
+                addBsToCart:this.addBsToCart,
                 openModal:this.openModal,
                 closeModal:this.closeModal,
                 increment:this.increment,
