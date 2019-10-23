@@ -1,20 +1,20 @@
-import React, { Component } from 'react'
+import React from 'react'
 import ShopByCategories from './ShopByCategories';
-import Bestsellers from './Bestsellers';
 import Bss from './Bss';
+import Banner from './Banner';
 
-export default class Home extends Component {
-  
-  render() {
-    return (
+export default function Home() {
+  return (
+    <div>
       <React.Fragment>
-        <div className="pb-3">
-          <div className="container-fluid mx-auto">
-            <Bss/>
-            <ShopByCategories/>
-          </div>
+      <div className="pb-3">
+        <div className="container-fluid mx-auto">
+          <Banner />
+          <ShopByCategories/>         
+          <Bss/>
         </div>
-      </React.Fragment>    
-    )
-  }
+      </div>
+      </React.Fragment> 
+    </div>
+  )
 }

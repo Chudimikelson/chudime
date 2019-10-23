@@ -92,15 +92,15 @@ export default class Checkout extends Component {
               <div className="paddin" style={{width:'100%'}}  >
               
                 <h5>Receiver's Name</h5>
-                <input onBlur={this.getFullname} ref={this.customerName} type="text" name="" placeholder="Full Name"/>
+                <input onBlur={this.getFullname} ref={this.customerName} type="text" name="" placeholder="your name"/>
                 <h5>E-mail</h5>
                 
                   
-                  <input onBlur={this.getEmail} ref={this.customerEmail} className = "email" type="text" placeholder="chudioselle@gamail.com"/>
+                  <input onBlur={this.getEmail} ref={this.customerEmail} className = "email" type="text" placeholder="your email"/>
                 
                   
                 <h5>Phone Number</h5>
-                <input onBlur={this.getPhone} ref = {this.customerPhone} type="text" name="" placeholder="08025198476"/>
+                <input onBlur={this.getPhone} ref = {this.customerPhone} type="text" name="" placeholder="your phone number"/>
                 <h5>Address</h5>
                 <input onBlur={this.getAddress} ref={this.customerAddress} className="addressfield" type="" name=""/>
               </div>

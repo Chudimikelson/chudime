@@ -8,19 +8,17 @@ export default class Products extends Component {
   render() {
     const { id, title, img, price, inCart } = this.props.product;
     return (
-      <ProductWrapper className="mdq-lg col-12 mx-auto col-md-6 col-lg-3 ">
-        <div className="card">
+      <ProductWrapper className="mdq-lg col-12 mx-auto col-md-6 col-lg-4 px-1">
+        
           <ProductConsumer>
             {value => (
-              <div
-                className="img-container"
+              <div className="card"
                 onClick={() => value.handleDetail(id)}
               >
                 <Link to="/details">
-                  <img src={img} alt="product" className="card-img-top" />
+                  <img src={img} style={{height:300}} alt="product" className="" />
                 </Link>
-                {/* <div className="d-flex"><p className="spacer"/>
-                <p className="share mt-3 mb-1 pr-3"><i className="fas fa-heart pr-1 pl-2"></i>Share</p></div> */}
+                
                 <div className="card-footer mt-1 d-flex justify-content-between">
                   <h5 className="align-self-center mb-0">{title}</h5>
                   <h5 className="text-blue font-italic mb-0">
@@ -49,7 +47,7 @@ export default class Products extends Component {
             )}
           </ProductConsumer>
           {/* card footer*/}
-        </div>
+        
       </ProductWrapper>
     );
   }
@@ -76,19 +74,37 @@ const ProductWrapper = styled.div`
   .card-footer h5 {
     font-size: 0.9rem;
   }
-  .card-img-top {
-    height:21rem;
-  }
-  .img-container {
+  .finess {
     position: relative;
-    overflow: hidden;
+    bottom: 3rem;
+    left:0;
   }
- 
-  .text-tit {
-    font-family: "Oswald", sans-serif !important;
+  
+  // .cxx.small-text {
+  //   font-size: 8px;
+  // }
+  .cxx {
+    position relative;
+    bottom: 2rem;
+    background: rgba(0, 0, 0, 0.788235294117647);
+    border-radius: 0 0 10px 10px;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    color: rgba(219, 112, 147, 0.61);
   }
-
-  .spacer {
-    flex: 1;
+  .btn {
+    width: 10rem; 
+    font-size: 0.8rem;
+    border-radius: 2rem;
+    background: rgba(250,248,250, 0.4);
+  }
+  .btn:hover {
+    border: solid 0.5px green;
+  }
+  .card {
+    border: none;
+  }
+  img {
+    border-radius: .5rem .5rem 0 0;
   }
 `;

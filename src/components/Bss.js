@@ -3,12 +3,11 @@ import Bestsellers from './Bestsellers';
 import {ProductConsumer} from '../Context';
 
 export default class ProductList extends Component {
-  
   render() {
     return (
       <React.Fragment>
         <div className="container">
-          <div className="paddit bestsellers text-center text-title">
+          <div className="bestsellers text-center text-title">
             <h2>Best Sellers</h2>
           </div>
           <div className="flex-containerz">

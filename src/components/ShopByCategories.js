@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import ceoPic from '../photos/ceo-1.png';
-
+import catPic1 from '../photos/kids set.jpg';
+import catPic2 from '../photos/fresh glow set.jpg';
 export default function ShopByCategories() {
   return (
     <Sbc>
@@ -16,25 +16,16 @@ export default function ShopByCategories() {
 <div className="card px-1 col-lg-6">
 
               
-              <img className="img-fluid" style={{height:350}}  src={ceoPic}  alt="glow body lotion"/>
-              <div className="finess mx-auto"><button className="btn px-5 py-1 text-center text-capitalize mb-2">face</button>
+              <img className="img-fluid" style={{height:350}}  src={catPic2}  alt="glow body lotion"/>
+              <div className="finess mx-auto"><button className="btn px-5 py-1 text-center text-capitalize mb-2">Shop All</button>
               </div>
                 
               
 </div>
-<div className="card px-1 col-lg-6"><img className="img-fluid" alt="" style={{height:350}}  src={ceoPic} />
-<div className="finess mx-auto"><button className="btn px-5 py-1 text-center text-capitalize mb-2">body</button>
+<div className="card px-1 col-lg-6"><img className="img-fluid" alt="" style={{height:350}}  src={catPic1} />
+<div className="finess mx-auto"><button className="btn px-5 py-1 text-center text-capitalize mb-2">Kids</button>
               </div>
 </div>
-<div className="card px-1 col-lg-6"><img className="img-fluid" alt="" style={{height:350}}  src={ceoPic} />
-<div className="finess mx-auto"><button className="btn px-5 py-1 text-center text-capitalize mb-2">anti-age</button>
-              </div>
-</div>
-<div className="card px-1 col-lg-6"><img className="img-fluid" alt="" style={{height:350}}  src={ceoPic} />
-<div className="finess mx-auto"><button className="btn py-1 px-5 text-center text-capitalize mb-2">care-sets</button>
-              </div>
-</div>
-
 
 </div>
 </Sbc>

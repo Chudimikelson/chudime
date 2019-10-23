@@ -1,50 +1,42 @@
 import React from "react";
-import { MDBCarousel, MDBCarouselInner, MDBCarouselItem, MDBView, MDBContainer } from
-"mdbreact";
+import styled from 'styled-components';
+import banner from '../photos/banner.jpg'
 
-const CarouselPage = () => {
+const Banner = () => {
   return (
-    <MDBContainer>
-      <MDBCarousel
-        activeItem={1}
-        length={3}
-        showControls={false}
-        showIndicators={false}
-        className="z-depth-1"
-        slide
-      >
-        <MDBCarouselInner>
-          <MDBCarouselItem itemId="1">
-            <MDBView>
-              <img
-                className="d-block w-100"
-                src="https://mdbootstrap.com/img/Photos/Slides/img%20(35).jpg"
-                alt="First slide"
-              />
-            </MDBView>
-          </MDBCarouselItem>
-          <MDBCarouselItem itemId="2">
-            <MDBView>
-              <img
-                className="d-block w-100"
-                src="https://mdbootstrap.com/img/Photos/Slides/img%20(33).jpg"
-                alt="Second slide"
-              />
-            </MDBView>
-          </MDBCarouselItem>
-          <MDBCarouselItem itemId="3">
-            <MDBView>
-              <img
-                className="d-block w-100"
-                src="https://mdbootstrap.com/img/Photos/Slides/img%20(31).jpg"
-                alt="Third slide"
-              />
-            </MDBView>
-          </MDBCarouselItem>
-        </MDBCarouselInner>
-      </MDBCarousel>
-    </MDBContainer>
+    <Bannerstyle className="card">
+      <div className="fines mx-auto">
+        <p>Welcome to Etoile Beauty Store</p>
+      </div>
+      <img className="img-fluid" src={banner} />
+      <div className="finess mx-auto"><button className="btn px-5 py-1 text-center text-capitalize">Shop Now</button>
+              </div>
+    </Bannerstyle>
   );
 }
 
-export default CarouselPage;
+const Bannerstyle = styled.div `
+border: none;
+.img-fluid {
+  height: 100%;
+  width: 100%;
+}
+.finess {
+  position: relative;
+  bottom: 8rem;
+  left:0;
+}
+.fines {
+  position: relative;
+  top: 5rem;
+  left:0;
+}
+.btn {
+  width:100%; 
+  font-size: 1.5rem;
+  background: palevioletred;
+  border-radius: 2rem;
+}
+`
+
+export default Banner;
