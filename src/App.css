@@ -190,6 +190,53 @@ button {
   margin-bottom: 1rem;
 }
 
+.footer {
+  background: palevioletred;
+  color: #fff;
+  text-align: center;
+}
+.WithStyles\(ForwardRef\(ExpansionPanelDetails\)\)-root-81{
+  background: palevioletred;
+}
+.footer ul {
+  list-style: none;
+  text-align: left;
+  padding-left: 10px;
+  margin-bottom: 0;
+  
+}
+.MuiPaper-root {
+  background: palevioletred !important;
+}
+.footer li {
+  font-size: .8rem;
+  color: #fff !important;
+}
+
+.footer-panels {
+  background: #ffffffc4 !important;
+  border-radius: 10px 10px 0 0 !important;
+  
+}
+.two  h6 {
+  font-family: Open Sans, sans-serif;
+  font-size: .7rem !important;
+  font-weight: 400 !important;
+}
+
+.get-in-touch span {
+  background: #fff;
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.fab, .fas {
+  color: palevioletred;
+}
+
 @media screen and (max-width:769px) {
   .main-menu, .bbn {
     display:none;
@@ -200,6 +247,10 @@ button {
 }
 
 @media screen and (min-width:1000px) {
+
+  .footer {
+    text-align: left;
+  }
 
   .card-img-top {
     

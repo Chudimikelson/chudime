@@ -4,32 +4,38 @@ import banner from '../photos/banner.jpg'
 
 const Banner = () => {
   return (
-    <Bannerstyle className="card">
-      <div className="fines mx-auto">
-        <p>Welcome to Etoile Beauty Store</p>
+    <Bannerstyle className="container">
+      <img className="banner" src={banner} />
+      <div className="fines"><h1 className="">Welcome to Etoile Beauty Store</h1>
+        
       </div>
-      <img className="img-fluid" src={banner} />
-      <div className="finess mx-auto"><button className="btn px-5 py-1 text-center text-capitalize">Shop Now</button>
-              </div>
+      <div className="finess">
+        <button className="btn px-5 py-1 text-capitalize">Shop Now</button>
+      </div>
     </Bannerstyle>
   );
 }
 
 const Bannerstyle = styled.div `
-border: none;
-.img-fluid {
-  height: 100%;
+.container {
+  position: relative;
+}
+.banner {
+  min-height: 350px;
   width: 100%;
+  opacity: 0.7;
 }
 .finess {
-  position: relative;
-  bottom: 8rem;
-  left:0;
+  position: absolute;
+  bottom: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%)
 }
 .fines {
-  position: relative;
-  top: 5rem;
-  left:0;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%)
 }
 .btn {
   width:100%; 
