@@ -218,10 +218,27 @@ button {
   border-radius: 10px 10px 0 0 !important;
   
 }
+
+.footer-panels:after {
+  content: '\002B';
+  color: #777;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.footer-panels[aria-expanded="true"]:after {
+  content: '\2212';
+}
+
 .two  h6 {
   font-family: Open Sans, sans-serif;
   font-size: .7rem !important;
   font-weight: 400 !important;
+}
+
+.bestsellers h2 {
+  font-size: 14px;
 }
 
 .get-in-touch span {

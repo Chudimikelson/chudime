@@ -1,15 +1,16 @@
 import React from "react";
 import styled from 'styled-components';
-import banner from '../photos/banner.jpg'
+import banner from '../photos/banner2.jpg'
 
 const Banner = () => {
   return (
     <Bannerstyle className="container">
-      <img className="banner" src={banner} />
-      <div className="fines"><h1 className="">Welcome to Etoile Beauty Store</h1>
+            <div className="fines text-center">Welcome to Etoile Beauty Store
         
-      </div>
-      <div className="finess">
+        </div>
+      <img className="banner img-fluid" src={banner} />
+
+      <div className="finess d-flex justify-content-center">
         <button className="btn px-5 py-1 text-capitalize">Shop Now</button>
       </div>
     </Bannerstyle>
@@ -17,29 +18,26 @@ const Banner = () => {
 }
 
 const Bannerstyle = styled.div `
-.container {
-  position: relative;
-}
+padding-top: 2rem;
 .banner {
   min-height: 350px;
+  max-height: 450px;
   width: 100%;
-  opacity: 0.7;
 }
 .finess {
-  position: absolute;
-  bottom: 30%;
-  left: 50%;
-  transform: translate(-50%, -50%)
+  position: relative;
+  bottom: 3rem;
+  left: 0;
 }
 .fines {
-  position: absolute;
-  top: 20%;
-  left: 50%;
-  transform: translate(-50%, -50%)
+  position: relative;
+  top: 4rem;
+  color: palevioletred;
+  font-size: 14px;
 }
 .btn {
-  width:100%; 
-  font-size: 1.5rem;
+  
+  font-size: .8rem;
   background: palevioletred;
   border-radius: 2rem;
 }

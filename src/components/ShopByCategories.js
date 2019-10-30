@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import catPic1 from '../photos/kids set.jpg';
 import catPic2 from '../photos/fresh glow set.jpg';
+import {Link} from 'react-router-dom';
 export default function ShopByCategories() {
   return (
     <Sbc>
@@ -17,7 +18,10 @@ export default function ShopByCategories() {
 
               
               <img className="img-fluid" style={{height:350}}  src={catPic2}  alt="glow body lotion"/>
-              <div className="finess mx-auto"><button className="btn px-5 py-1 text-center text-capitalize mb-2">Shop All</button>
+              <div className="finess mx-auto">
+                <Link to="/shop">
+                <button className="btn px-5 py-1 text-center text-capitalize mb-2">Shop All</button>
+                </Link>
               </div>
                 
               
@@ -61,5 +65,9 @@ const Sbc = styled.div `
 }
 img {
   border-radius: .5rem;
+}
+
+h2 {
+  font-size: 14px;
 }
 `

@@ -58,6 +58,7 @@ const Btn = styled.div `
   position: relative;
   bottom: 3rem;
   left:0;
+  margin-bottom: 0;
 }
 
 // .cxx.small-text {
@@ -68,7 +69,7 @@ const Btn = styled.div `
   bottom: 2rem;
   
   border-radius: 0 0 10px 10px;
-  padding-top: .5rem;
+  
   padding-bottom: .5rem;
   color: palevioletred;
 }
