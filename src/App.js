@@ -12,6 +12,7 @@ import Modal from './components/Modal';
 import Footer from './components/Footer';
 import Home from './components/Home';
 
+
 class App extends Component {
   render() {
     return (
@@ -23,6 +24,7 @@ class App extends Component {
           <Route path="/cart" component={Cart} />
           <Route path="/checkout" component={Checkout} />
           <Route exact path="/shop" component={ProductList}/>
+          
           <Route component={Default} />
         </Switch>
         <Modal/>

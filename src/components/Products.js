@@ -16,7 +16,7 @@ export default class Products extends Component {
                 onClick={() => value.handleDetail(id)}
               >
                 <Link to="/details">
-                  <img src={img} style={{height:300}} alt="product" className="" />
+                  <img src={img} alt="product" className="product-img" />
                 </Link>
                 
                 <div className="card-footer mt-1 d-flex justify-content-between">
@@ -64,6 +64,10 @@ Products.propTypes = {
 };
 
 const ProductWrapper = styled.div`
+  .product-img {
+    width: 100%;
+    height: 400px;
+  }
   .card {
     border-color: transparent;
     box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.5);
