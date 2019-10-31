@@ -8,7 +8,7 @@ export default function Home() {
     <div>
       <React.Fragment>
       <div className="pb-3">
-        <div className="container-fluid mx-auto">
+        <div className="mx-auto">
           <Banner />
           <ShopByCategories/>         
           <Bss/>

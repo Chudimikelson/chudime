@@ -12,7 +12,7 @@ export default class Bestsellers extends Component {
         <ProductConsumer>
             {value => (
               <div className="card">
-                 <img src={img} style={{height:300}}  alt="glow body lotion"/>
+                 <img src={img} style={{height:350}}  alt="glow body lotion"/>
                   <div className="finess mx-auto">
                     <button className="btn text-center text-capitalize"
                       disabled={inCart ? true : false}
@@ -58,7 +58,6 @@ const Btn = styled.div `
   position: relative;
   bottom: 3rem;
   left:0;
-  margin-bottom: 0;
 }
 
 // .cxx.small-text {

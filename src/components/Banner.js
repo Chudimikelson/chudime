@@ -1,14 +1,14 @@
 import React from "react";
 import styled from 'styled-components';
-import banner from '../photos/banner2.jpg'
+import banner from '../photos/banner3.jpg'
 
 const Banner = () => {
   return (
-    <Bannerstyle className="container">
-            <div className="fines text-center">Welcome to Etoile Beauty Store
+    <Bannerstyle className="banner">
+            {/* <div className="fines text-center">Welcome to Etoile Beauty Store
         
-        </div>
-      <img className="banner img-fluid" src={banner} />
+        </div> */}
+      <img className="" src={banner} />
 
       <div className="finess d-flex justify-content-center">
         <button className="btn px-5 py-1 text-capitalize">Shop Now</button>
@@ -20,8 +20,9 @@ const Banner = () => {
 const Bannerstyle = styled.div `
 padding-top: 2rem;
 .banner {
-  min-height: 350px;
-  max-height: 450px;
+  min-height: 550px;
+}
+img {
   width: 100%;
 }
 .finess {
