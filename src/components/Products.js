@@ -8,11 +8,11 @@ export default class Products extends Component {
   render() {
     const { id, title, img, price, inCart } = this.props.product;
     return (
-      <ProductWrapper className="mdq-lg col-12 mx-auto col-md-3 col-lg-4 px-1">
+      <ProductWrapper className="mdq-lg mx-auto col-lg-3 col-md-4 px-1">
         
           <ProductConsumer>
             {value => (
-              <div className="card"
+              <div className=""
                 onClick={() => value.handleDetail(id)}
               >
                 <Link to="/details">
