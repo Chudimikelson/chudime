@@ -81,14 +81,15 @@ class ProductProvider extends Component {
 
     addBsToCart = (id) => {
       let tempBestsellerProducts = [...this.state.bestsellers];
-      const index = tempBestsellerProducts.indexOf(this.getbestsellers(id));
-      const bestseller = tempBestsellerProducts[index];
-      bestseller.inCart = true;
-      bestseller.count = 1;
-      const price = bestseller.price;
-      bestseller.total = price;
+      const posit = tempBestsellerProducts.indexOf(this.getbestsellers(id));
+      const bs = tempBestsellerProducts[posit];
+      bs.inCart = true;
+      console.log(bs.inCart);
+      bs.count = 1;
+      const price = bs.price;
+      bs.total = price;
       this.setState(() => {
-        return {bestsellers:tempBestsellerProducts, cart:[...this.state.cart, bestseller]};
+        return {bestsellers:tempBestsellerProducts, cart:[...this.state.cart, bs]};
       }, () => {
         this.addTotals();
       });
@@ -113,6 +114,7 @@ class ProductProvider extends Component {
     const product = tempCart[index];
     product.count = product.count +1;
     product.total = product.count * product.price;
+    
 
     this.setState(
       ()=>{
@@ -129,6 +131,7 @@ class ProductProvider extends Component {
     const product = tempCart[index];
 
     product.count = product.count - 1;
+    
     if (product.count === 0){
       this.removeItem(id);
     } else {
@@ -146,28 +149,26 @@ class ProductProvider extends Component {
   };
   removeItem = (id) => {
     let tempProducts = [...this.state.products];
-    let tempBestsellerProducts = [...this.state.bestsellers];
-
+    let tempbs = [...this.state.bestsellers];
     let tempCart = [...this.state.cart];
     tempCart = tempCart.filter(item => item.id!==id);
-
     const index = tempProducts.indexOf(this.getItem(id));
+    let posit = tempbs.indexOf(this.getbestsellers(id));
+    console.log(tempCart);
+    console.log(index);
     let removedProduct = tempProducts[index];
+    if (!removedProduct)  {
+      removedProduct = tempbs[posit];
+    }
     removedProduct.inCart = false;
+
     removedProduct.count = 0;
     removedProduct.total = 0;
-
-    const position = tempBestsellerProducts.indexOf(this.getbestsellers(id));
-    let removedproduct = tempBestsellerProducts[position];
-    removedproduct.inCart = false;
-    removedproduct.count = 0;
-    removedproduct.total = 0;
 
     this.setState(() => {
       return {
         cart:[...tempCart],
-        products:[...tempProducts],
-        bestsellers: [...tempBestsellerProducts]
+        products:[...tempProducts]
       };
     }, () => {this.addTotals();
     });

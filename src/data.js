@@ -165,7 +165,7 @@ export const detailProduct = {
 
 export const bestsellerProducts = [
 {
-  id: 1,
+  id: 13,
   title: "Active Glow Set",
   img: "img/active glow set.jpg",
   price: 14000,
@@ -177,7 +177,7 @@ export const bestsellerProducts = [
   total: 0
 },
 {
-  id: 2,
+  id: 14,
   title: "Fresh Glow Set",
   img: "img/fresh glow set.jpg",
    price: 12000,
@@ -189,7 +189,7 @@ export const bestsellerProducts = [
   total: 0
 },
 {
-  id: 3,
+  id: 15,
   title: "Basic Glow Set",
   img: "img/active glow set.jpg",
   price: 5000,
@@ -201,7 +201,7 @@ export const bestsellerProducts = [
   total: 0
 },
 {
-  id: 4,
+  id: 16,
   title: "Kids Care Set",
   img: "img/kids set.jpg",
   price: 10500,
