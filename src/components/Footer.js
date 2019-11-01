@@ -10,7 +10,7 @@ export default class Footer extends Component {
             <div className="d-flex justify-content-center p-2 get-in-touch">
               <span className=""><i className="p-2 fab fa-instagram" /></span>
               <span><i className="p-2 fab fa-facebook px-2"/></span>
-              <span><i className="p-2 fab fa-whatsapp" /></span>
+              <a href="://api.whatsapp.com/send?phone=+2348142195884"><span><i className="p-2 fab fa-whatsapp" /></span></a>
               <span><i className="p-2 fas fa-envelope px-2"/></span>
             </div>
           </div>
