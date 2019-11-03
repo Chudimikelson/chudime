@@ -58,7 +58,7 @@ export default class Details extends Component {
                     <p className= "py-2 nic text-capitalize mb-0"><i className="fas fa-cart-plus pr-3"></i>Add to Cart</p>
                   )}
                     </button>
-                    <Link to='/'>
+                    <Link to='/shop'>
                       <button className="cart-btn btc text-center py-0 px-0 my-2" ><p className="py-2 mb-0">Back to Products</p></button>
                     </Link>
                   </div>

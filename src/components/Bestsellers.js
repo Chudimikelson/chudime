@@ -12,7 +12,7 @@ export default class Bestsellers extends Component {
         <ProductConsumer>
             {value => (
               <div className="card">
-                 <img src={img} style={{height:350}}  alt="glow body lotion"/>
+                 <img src={img} style={{height:350}}  alt="Etoile Beauty Nig organic natural black soap body lotion face cream skin glowing lightening brightening serum oil mask"/>
                   <div className="finess mx-auto">
                     <button className="btn text-center text-capitalize"
                       disabled={inCart ? true : false}
@@ -27,10 +27,10 @@ export default class Bestsellers extends Component {
                     <p className="mb-0">Add to Cart</p>
                   )}</button>
                   </div>
-                  <div className="d-flex justify-content-space-between cxx">
-                    <p className="small-text px-3 mb-0">{title}</p>
-                    <p className="mb-0">
-                      <span className="px-1 text-right">&#8358;</span>{price}
+                  <div className="d-flex justify-content-center cxx">
+                    <p className="px-3 mb-0"><h1 className="small-text">{title}</h1></p>
+                    <p className="mb-0"><h3 className="small-text">
+                      <span className="px-1 text-right">&#8358;</span>{price}</h3>
                     </p>
                   </div>
               </div>  
@@ -60,16 +60,12 @@ const Btn = styled.div `
   left:0;
 }
 
-// .cxx.small-text {
-//   font-size: 8px;
-// }
+.small-text {
+  font-size: 1.2rem;
+}
 .cxx {
   position relative;
   bottom: 2rem;
-  
-  border-radius: 0 0 10px 10px;
-  
-  padding-bottom: .5rem;
   color: palevioletred;
 }
 .btn {

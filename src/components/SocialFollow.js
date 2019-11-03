@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function SocialFollow() {
   return (
-    <div className="one">Get in Touch
+    <div className="one">Visit us on social media
       <div className="d-flex justify-content-center  get-in-touch p-2">
         <a href="https://www.instagram.com/etoile_skincare" rel="noopener noreferrer" target="_blank"
            className="instagram social">

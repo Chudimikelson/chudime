@@ -21,7 +21,7 @@ export default class Navbar extends Component {
         <div className="">
           <div className="text-center mx-auto">
             <Link to='/'>
-              <img className="mylogo"src={logo} alt="store"/>
+              <h1><img className="mylogo"src={logo} alt="Etoile Beauty Nig"/></h1>
             </Link>
           </div>
           {/* <div>

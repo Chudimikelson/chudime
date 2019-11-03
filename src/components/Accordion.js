@@ -93,9 +93,9 @@ export default function CustomizedExpansionPanels() {
         <ExpansionPanelDetails>
           <Typography>
             
-              <li>address</li>
-              <li>08142195884</li>
-              <li>email</li>
+              <li><span className="mr-2"><i className="fa fa-map-marker"></i></span>Kubwa District Center, FCT Abuja.</li>
+              <li><span className="mr-2"><i className="fa fa-phone"></i></span>08142195884</li>
+              <li><span className="mr-2"><i className="fa fa-envelope"></i></span>etoilebeautynig@gmail.com</li>
             
           </Typography>
         </ExpansionPanelDetails>

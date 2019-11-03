@@ -249,16 +249,20 @@ button {
   color: palevioletred;
 }
 
-i.fab {
-  margin: 0 1px;
+.one .fab {
+  margin: 0 .2rem;
   height: 2rem;
   width: 2rem;
   text-align: center;
- background: #fff;
-  border: 1px solid #303030;
+  background: #fff;
+  
   border-radius: 50%;
   padding: 0.5em 0;
   
+}
+
+.page-title {
+  font-size: 1.5rem;
 }
 
 @media screen and (max-width:769px) {

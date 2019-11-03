@@ -8,7 +8,7 @@ export default function ShopByCategories() {
     <Sbc>
       
         <div className="sbc text-center text-title">
-          <h2>Shop by Category</h2>
+          <h2>Etoile Beauty Categories</h2>
         </div>
       
         <div className="container mx-auto flex-containerz">
@@ -17,7 +17,7 @@ export default function ShopByCategories() {
 <div className="card px-1 col-lg-6">
 
               
-              <img className="img-fluid" style={{height:350}}  src={catPic2}  alt="glow body lotion"/>
+              <img className="img-fluid" style={{height:350}}  src={catPic2}  alt="Etoile Beauty Nig skin lightening black soap brightening body lotion"/>
               <div className="finess mx-auto">
                 <Link to="/shop">
                 <button className="btn px-5 py-1 text-center text-capitalize mb-2">Shop All</button>
@@ -26,7 +26,7 @@ export default function ShopByCategories() {
                 
               
 </div>
-<div className="card px-1 col-lg-6"><img className="img-fluid" alt="" style={{height:350}}  src={catPic1} />
+<div className="card px-1 col-lg-6"><img className="img-fluid" alt="Natural Lightening and skin brightening lotions and creams for kids" style={{height:350}}  src={catPic1} />
 <div className="finess mx-auto"><button className="btn px-5 py-1 text-center text-capitalize mb-2">Kids</button>
               </div>
 </div>

@@ -8,10 +8,11 @@ export default class ProductList extends Component {
   render() {
     return (
       <React.Fragment>
-        <div className="pb-3">
+        <div className="py-2">
          
-          <div className="container-fluid mx-auto">
-            <Title name="all" title="products"/>
+          <div className="container-fluid mx-auto paddit">
+            <h1 className="text-center page-title">Etoile Beauty Products</h1>
+            
             
             <div className="flex-containerz">
               <ProductConsumer>

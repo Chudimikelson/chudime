@@ -5,10 +5,10 @@ import banner from '../photos/banner3.jpg'
 const Banner = () => {
   return (
     <Bannerstyle className="banner">
-            {/* <div className="fines text-center">Welcome to Etoile Beauty Store
+            <div className="text-center fines">Welcome <h1 className="page-title">Etoile Beauty Nig</h1>
         
-        </div> */}
-      <img alt="Etoile Beauty" src={banner} />
+        </div>
+      <img className="pt-3" alt="Etoile Beauty Nig" src={banner} />
 
       <div className="finess d-flex justify-content-center">
         <button className="btn px-5 py-1 text-capitalize">Shop Now</button>
@@ -18,7 +18,7 @@ const Banner = () => {
 }
 
 const Bannerstyle = styled.div `
-padding-top: 2rem;
+
 .banner {
   min-height: 550px;
 }
@@ -32,9 +32,8 @@ img {
 }
 .fines {
   position: relative;
-  top: 4rem;
-  color: palevioletred;
-  font-size: 14px;
+  top: 5rem;
+  color: #fff;
 }
 .btn {
   

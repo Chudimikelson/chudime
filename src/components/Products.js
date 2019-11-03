@@ -12,23 +12,23 @@ export default class Products extends Component {
         
           <ProductConsumer>
             {value => (
-              <div className=""
+              <div className="mb-3"
                 onClick={() => value.handleDetail(id)}
               >
                 <Link to="/details">
-                  <img src={img} alt="product" className="product-img" />
+                  <img src={img} alt="Etoile Beauty Nig organic natural black soap body lotion face cream skin glowing lightening brightening serum oil mask" className="product-img" />
                 </Link>
                 
-                <div className="card-footer mt-1 d-flex justify-content-between">
-                  <h5 className="align-self-center mb-0">{title}</h5>
-                  <h5 className="text-blue font-italic mb-0">
+                <div className="card-footer d-flex justify-content-between">
+                  <h1 className="small-text align-self-center mb-0">{title}</h1>
+                  <h3 className="small-text text-blue  mb-0">
                     <span className="mr-1 align-self-center">&#8358;</span>
                     {price}
-                  </h5>
+                  </h3>
                 </div>
                 
                 <button
-                  className="cart-btn text-center text-tit py-0 my-2"
+                  className="cart-btn text-center text-tit pb-2 "
                   disabled={inCart ? true : false}
                   onClick={() => {
                     value.addToCart(id);
@@ -39,9 +39,10 @@ export default class Products extends Component {
                       Item added
                     </p>
                   ) : (
-                    <h5 className= "py-2 pr-3 nic mx-auto text-capitalize mb-0"><i className="fas fa-cart-plus px-3"></i>Add to Cart</h5>
+                    <p className= "py-2 nic mx-auto text-capitalize mb-0">Add to Cart</p>
                   )}
                 </button>
+                <hr style={{width:50}}/>
               </div>
             )}
           </ProductConsumer>
@@ -83,9 +84,9 @@ const ProductWrapper = styled.div`
     left:0;
   }
   
-  // .cxx.small-text {
-  //   font-size: 8px;
-  // }
+  .small-text {
+    font-size: 1.2rem;
+  }
   .cxx {
     position relative;
     bottom: 2rem;
