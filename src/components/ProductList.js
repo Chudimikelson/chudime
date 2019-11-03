@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import Products from './Products';
-import Title from './Title';
 import {ProductConsumer} from '../Context';
 
 export default class ProductList extends Component {
@@ -14,7 +13,7 @@ export default class ProductList extends Component {
             <h1 className="text-center page-title">Etoile Beauty Products</h1>
             
             
-            <div className="flex-containerz">
+            <div className="flex-containerz row">
               <ProductConsumer>
                 {value => {
                   return value.products.map( product => {

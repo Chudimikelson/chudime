@@ -11,23 +11,23 @@ export default function ShopByCategories() {
           <h2>Etoile Beauty Categories</h2>
         </div>
       
-        <div className="container mx-auto flex-containerz">
+        <div className="container mx-auto flex-containerz row">
       
 
-<div className="card px-1 col-lg-6">
+<div className="col-md-6 col-lg-6">
 
               
               <img className="img-fluid" style={{height:350}}  src={catPic2}  alt="Etoile Beauty Nig skin lightening black soap brightening body lotion"/>
               <div className="finess mx-auto">
                 <Link to="/shop">
-                <button className="btn px-5 py-1 text-center text-capitalize mb-2">Shop All</button>
+                <button className="py-1 text-capitalize">Shop All</button>
                 </Link>
               </div>
                 
               
 </div>
-<div className="card px-1 col-lg-6"><img className="img-fluid" alt="Natural Lightening and skin brightening lotions and creams for kids" style={{height:350}}  src={catPic1} />
-<div className="finess mx-auto"><button className="btn px-5 py-1 text-center text-capitalize mb-2">Kids</button>
+<div className="px-1 col-md-6 col-lg-6"><img className="img-fluid" alt="Natural Lightening and skin brightening lotions and creams for kids" style={{height:350}}  src={catPic1} />
+<div className="finess mx-auto"><button className="py-1 text-capitalize">Kids</button>
               </div>
 </div>
 
@@ -48,15 +48,14 @@ const Sbc = styled.div `
 }
 
 .finess {
-  position: relative;
-  bottom: 10rem;
-  left:0;
-}
-.btn {
-  width:100%; 
+  width:50%;
   font-size: 1.5rem;
   background: rgba(250,248,250, 0.5);
+  position: relative;
+  bottom: 10rem;
+  text-align: center;
 }
+
 .btn:hover {
   background: #28a745;
 }
@@ -64,6 +63,7 @@ const Sbc = styled.div `
   border: none;
 }
 img {
+  width:100%;
   border-radius: .5rem;
 }
 

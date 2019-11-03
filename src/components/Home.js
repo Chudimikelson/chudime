@@ -8,11 +8,10 @@ export default function Home() {
 
       <React.Fragment>
 
-        <div className="pt-2 mx-auto">
+        
           <Banner />
           <ShopByCategories/>         
           <Bss/>
-        </div>
 
       </React.Fragment> 
 

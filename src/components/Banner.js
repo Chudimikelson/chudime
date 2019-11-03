@@ -1,6 +1,7 @@
 import React from "react";
 import styled from 'styled-components';
-import banner from '../photos/banner3.jpg'
+import banner from '../photos/banner3.jpg';
+import {Link} from 'react-router-dom';
 
 const Banner = () => {
   return (
@@ -11,7 +12,9 @@ const Banner = () => {
       <img className="pt-3" alt="Etoile Beauty Nig" src={banner} />
 
       <div className="finess d-flex justify-content-center">
+        <Link to='/shop'>
         <button className="btn px-5 py-1 text-capitalize">Shop Now</button>
+        </Link>
       </div>
     </Bannerstyle>
   );
@@ -19,10 +22,8 @@ const Banner = () => {
 
 const Bannerstyle = styled.div `
 
-.banner {
-  min-height: 550px;
-}
 img {
+  max-height: 40rem;
   width: 100%;
 }
 .finess {
@@ -32,7 +33,7 @@ img {
 }
 .fines {
   position: relative;
-  top: 5rem;
+  top: 6rem;
   color: #fff;
 }
 .btn {

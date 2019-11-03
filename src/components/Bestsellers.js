@@ -7,7 +7,7 @@ export default class Bestsellers extends Component {
   render() {
     const { id, title, img, price, inCart } = this.props.bestseller;
     return (
-      <Btn className="col-lg-3 px-1">
+      <Btn className="col-12 col-md-5 col-lg-3 mx-auto">
         <div>
         <ProductConsumer>
             {value => (
@@ -28,12 +28,12 @@ export default class Bestsellers extends Component {
                   )}</button>
                   </div>
                   <div className="d-flex justify-content-center cxx">
-                    <p className="px-3 mb-0"><h1 className="small-text">{title}</h1></p>
-                    <p className="mb-0"><h3 className="small-text">
-                      <span className="px-1 text-right">&#8358;</span>{price}</h3>
-                    </p>
+                    <h1 className="small-text"><p className="px-3 mb-0">{title}</p></h1>
+                    <h3 className="small-text"><p className="mb-0">
+                      <span className="px-1 text-right">&#8358;</span>{price}</p></h3>
                   </div>
-              </div>  
+              </div>
+               
             )}
           </ProductConsumer>
           </div>

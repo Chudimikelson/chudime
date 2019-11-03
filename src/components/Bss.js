@@ -10,7 +10,7 @@ export default class ProductList extends Component {
           <div className="bestsellers text-center text-title">
             <h2>Best Sellers</h2>
           </div>
-          <div className="flex-containerz">
+          <div className="flex-containerz row">
           <ProductConsumer>
                 {value => {
                   return value.bestsellers.map( bestseller => {
