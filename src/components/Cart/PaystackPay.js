@@ -68,10 +68,10 @@ import React, { Component } from 'react';
     	getReference = () => {
         this.clicked();
     		//you can put any unique reference implementation code here
-    		let text = "";
+    		let text = "EBN";
         let possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-.=";
 
-    		for( let i=0; i < 15; i++ )
+    		for( let i=0; i < 5; i++ )
     			text += possible.charAt(Math.floor(Math.random() * possible.length));
 
     		return text;

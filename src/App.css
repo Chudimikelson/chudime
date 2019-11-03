@@ -195,19 +195,16 @@ button {
 .WithStyles\(ForwardRef\(ExpansionPanelDetails\)\)-root-81{
   background: palevioletred;
 }
-.footer ul {
-  list-style: none;
-  text-align: left;
-  padding-left: 10px;
-  margin-bottom: 0;
-  
-}
+
 .MuiPaper-root {
   background: palevioletred !important;
 }
 .footer li {
+  list-style: none;
+  text-align: left;
   font-size: .8rem;
   color: #fff !important;
+  padding-top: 3px;
 }
 
 .footer-panels {
@@ -238,17 +235,30 @@ button {
   font-size: 14px;
 }
 
-.get-in-touch span {
+/* .get-in-touch span {
   background: #fff;
-  border-radius: 50%;
+  margin: 0 .5rem;
   width: 2rem;
   height: 2rem;
-  margin-left: 5px;
-  margin-right: 5px;
-}
+  padding: .3rem;
+  border-radius: 50%;  
+} */
+
 
 .fab, .fas {
   color: palevioletred;
+}
+
+i.fab {
+  margin: 0 1px;
+  height: 2rem;
+  width: 2rem;
+  text-align: center;
+ background: #fff;
+  border: 1px solid #303030;
+  border-radius: 50%;
+  padding: 0.5em 0;
+  
 }
 
 @media screen and (max-width:769px) {

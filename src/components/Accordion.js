@@ -61,11 +61,9 @@ export default function CustomizedExpansionPanels() {
         </ExpansionPanelSummary>
         <ExpansionPanelDetails>
           <Typography>
-            <ul>
               <li>About Us</li>
               <li>Terms & Conditions</li>
               <li>Privacy Policy</li>
-              </ul>
           </Typography>
         </ExpansionPanelDetails>
       </ExpansionPanel>
@@ -77,14 +75,14 @@ export default function CustomizedExpansionPanels() {
         </ExpansionPanelSummary>
         <ExpansionPanelDetails>
           <Typography>
-            <ul>
+            
               <li>Customer Service</li>
               <li>FAQs</li>
               <li>Order Status</li>
               <li>Payments</li>
               <li>Shipping Information</li>
               <li>Return Policy</li>
-            </ul>
+           
           </Typography>
         </ExpansionPanelDetails>
       </ExpansionPanel>
@@ -94,11 +92,11 @@ export default function CustomizedExpansionPanels() {
         </ExpansionPanelSummary>
         <ExpansionPanelDetails>
           <Typography>
-            <ul>
-              <li><address>address</address></li>
-              <li><phone>08142195884</phone></li>
-              <li><email>email</email></li>
-            </ul>
+            
+              <li>address</li>
+              <li>08142195884</li>
+              <li>email</li>
+            
           </Typography>
         </ExpansionPanelDetails>
       </ExpansionPanel>

@@ -8,7 +8,7 @@ const Banner = () => {
             {/* <div className="fines text-center">Welcome to Etoile Beauty Store
         
         </div> */}
-      <img className="" src={banner} />
+      <img alt="Etoile Beauty" src={banner} />
 
       <div className="finess d-flex justify-content-center">
         <button className="btn px-5 py-1 text-capitalize">Shop Now</button>
