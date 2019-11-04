@@ -113,6 +113,9 @@ button {
   background: none;
   border:none;
 }
+button:focus {
+  outline:none !important;
+}
 .btc {
   border-radius: 1.5rem;
   background: var(--lightBlue);
@@ -266,7 +269,7 @@ button {
 }
 
 @media screen and (max-width:769px) {
-  .main-menu, .bbn {
+  .bbn {
     display:none;
   }  
   .card-img-top {

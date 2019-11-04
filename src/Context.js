@@ -178,6 +178,7 @@ class ProductProvider extends Component {
       return {cart:[]};
     }, () => {
       this.setProducts();
+      this.setBestsellers();
       this.addTotals();
     });
   };

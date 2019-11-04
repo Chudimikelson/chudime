@@ -20,7 +20,7 @@ export default class Sidebar extends Component {
   render() {
     return (
       <div>
-        <button id="menuBar" className="" onClick={this.toggle} >
+        <button id="menuBar" onClick={this.toggle} >
         <span id='menubaricon' ><i className="fas fa-bars"></i></span>
         </button>
         <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
@@ -36,10 +36,10 @@ export default class Sidebar extends Component {
           <Link to="/shop" onClick={this.toggle} className="nav-link">Shop</Link>
           </li>
           <li className="nav-item">
-          <Link to="/"className="nav-link">About</Link>
+          <Link to="/academy" onClick={this.toggle}className="nav-link">Learn Skin Care</Link>
           </li>
           <li className="nav-item">
-          <Link to="/"className="nav-link">Contact Us</Link>
+          <Link to="/botanica" onClick={this.toggle}className="nav-link">Buy Ingredients</Link>
           </li>
         </ul>
         </div>
@@ -68,8 +68,9 @@ background: #fff;
   font-size: 1.2rem;
   background-color: transparent;
   border:none;
-  outline:none;
+
 }
+
 .fa-shopping-cart {
   font-size: 1.2rem;
 }
