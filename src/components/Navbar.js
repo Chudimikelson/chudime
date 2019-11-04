@@ -1,44 +1,45 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
-import logo from '../logo.png';
+import logo from '../logo.jpg';
 import styled from 'styled-components';
-import {ButtonContainer} from './Button';
+import Sidebar from './Sidebar';
+import Menubar from './Menubar';
 
 export default class Navbar extends Component {
-    render() {
-        return (
-        <NavWrapper className="navbar navbar-expand-sm navbar-dark px-sm-5">
-            {/* 
-            https://www.iconfinder.com/icons/1243689/call_phone_icon
-            Creative Commons (Attribution 3.0 Unported);
-            https://www.iconfinder.com/Makoto_msk */}
+  render() {
+    return (
+      <React.Fragment>
+        <div className="bbn fixed"><Menubar/></div>
+        <NavWrapper className="d-lg-none d-flex justify-content-between p-3  fixed">
+          <div className="pl-0"><Sidebar/></div>
+          <div className="text-center mx-auto">
             <Link to='/'>
-                <img src={logo} alt="store" className="navbar-brand"/>
+              <h1 className="mb-0">
+                <img className="mylogo"src={logo} alt="Etoile Beauty Nigeria"/>
+              </h1>
             </Link>
-            <ul className="navbar-nav align-items-center">
-                <li className="nav-item">
-                    <Link to="/" className="nav-link">
-                        Beauty Nig.
-                    </Link>
-                </li>
-            </ul>
-            <Link to="/cart" className="ml-auto">
-                <button id="cartbtn">
-                    <span className="mr-2>">
-                        <i className="fas fa-shopping-cart" />
-                    </span>
-                </button>
+          </div>
+          <div className="text-right pr-0">
+            <Link to="/checkout" className="ml-auto">
+              <button id="cartbtn">
+                <span>
+                  <i className="ml-1 fas fa-shopping-cart" />
+                </span>
+              </button>
             </Link>
+          </div>
         </NavWrapper>
-        );
-    }
+      </React.Fragment>
+    );
+  }
 }
 
 const NavWrapper = styled.nav`
-background: #fff;
-.nav-link {
-    color: palevioletred!important;
-    font-size: 1.3rem;
-    text-transform: capitalize;
+.mylogo  {
+  height: 2rem;
+  width: 9rem;
+}
+.fa-shopping-cart {
+  font-size: 1.2rem;
 }
 `

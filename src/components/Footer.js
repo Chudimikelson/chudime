@@ -1,22 +1,21 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
+import Accordion from './Accordion';
+import SocialFollow from  './SocialFollow';
 
 export default class Footer extends Component {
     render() {
     return (
-      <FootWrapper>
-        <div className="container">
-          <div className="text-center mx-auto py-2">
-          <h6>Copyright  Etoile Beauty 2019</h6>
-          <h7>Powered by <br/> Blackgene Development</h7>
+      
+        <div className="footer pb-1">
+          <SocialFollow/>
+          <Accordion/>
+          <div className="two py-2">
+            <div><h6>&copy; Etoile Beauty 2019</h6></div>
+            <div><h6 className="">Built by Blackgene Development</h6>
+            </div>
           </div>
         </div>
-      </FootWrapper>
+     
     )
   }
 }
-
-const FootWrapper = styled.nav`
-background: palevioletred;
-color: #fff;
-`
