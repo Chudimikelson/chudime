@@ -5,15 +5,10 @@ import Banner from './Banner';
 
 export default function Home() {
   return (
-
       <React.Fragment>
-
-        
           <Banner />
           <ShopByCategories/>         
           <Bss/>
-
       </React.Fragment> 
-
   )
 }

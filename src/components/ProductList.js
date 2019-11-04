@@ -1,12 +1,19 @@
 import React, { Component } from 'react'
 import Products from './Products';
 import {ProductConsumer} from '../Context';
+import Helmet from 'react-helmet';
 
 export default class ProductList extends Component {
   
   render() {
     return (
       <React.Fragment>
+      <Helmet>
+        <title>Etoile Beauty Nigeria | Lightening Black Soap, Natural Body Brightening Lotion, Face Cream, Scrubs, Masks, Oils and Serums</title>
+        <meta nmae="description" content="Etoile Beauty Nigeria is your best bet for buying organic and natural skin care products, lightening black soap, brightening lotions, creams and oils for a natural glowing face, body and all-round beauty"
+        />
+        </Helmet>
+      
         <div className="py-2">
          
           <div className="container-fluid mx-auto paddit">
@@ -24,7 +31,8 @@ export default class ProductList extends Component {
             </div>
           </div>
         </div>
-      </React.Fragment>    
+      </React.Fragment>
+          
     )
   }
 }

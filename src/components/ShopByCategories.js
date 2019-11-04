@@ -6,45 +6,34 @@ import {Link} from 'react-router-dom';
 export default function ShopByCategories() {
   return (
     <Sbc>
-      
-        <div className="sbc text-center text-title">
-          <h2>Etoile Beauty Categories</h2>
+      <div className="sbc text-center text-title">
+        <h2>Etoile Beauty Categories</h2>
+      </div>
+      <div className="container mx-auto flex-container row">
+        <div className="col-md-6 col-lg-6">
+          <img className="img-fluid" style={{height:350}}  src={catPic2}  alt="Etoile Beauty Nig skin lightening black soap brightening body lotion"/>
+          <div className="finess mx-auto">
+            <Link to="/shop">
+              <button className="py-1 text-capitalize">Shop All</button>
+            </Link>
+          </div>  
         </div>
-      
-        <div className="container mx-auto flex-containerz row">
-      
-
-<div className="col-md-6 col-lg-6">
-
-              
-              <img className="img-fluid" style={{height:350}}  src={catPic2}  alt="Etoile Beauty Nig skin lightening black soap brightening body lotion"/>
-              <div className="finess mx-auto">
-                <Link to="/shop">
-                <button className="py-1 text-capitalize">Shop All</button>
-                </Link>
-              </div>
-                
-              
-</div>
-<div className="px-1 col-md-6 col-lg-6"><img className="img-fluid" alt="Natural Lightening and skin brightening lotions and creams for kids" style={{height:350}}  src={catPic1} />
-<div className="finess mx-auto"><button className="py-1 text-capitalize">Kids</button>
-              </div>
-</div>
-
-</div>
-</Sbc>
-    
+        <div className="col-md-6 col-lg-6"><img className="img-fluid" alt="Natural Lightening and skin brightening lotions and creams for kids" style={{height:350}}  src={catPic1} />
+          <div className="finess mx-auto"><button className="py-1 text-capitalize">Kids</button>
+          </div>
+        </div>
+      </div>
+    </Sbc>
   )
 }
 
 const Sbc = styled.div `
 
 .flex-container {
-  justify-content: center;
-  align-content: center;
   display: flex;
   flex-wrap: wrap;
-  /* flex-direction: column; */
+  background: #fff;
+  justify-content: center;
 }
 
 .finess {
