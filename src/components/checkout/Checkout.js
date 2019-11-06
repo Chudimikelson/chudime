@@ -62,63 +62,58 @@ export default class Checkout extends Component {
       
         <Spaces>
         <div className="container">
-          <div className="col-10 mx-auto banner-title text-center">
-            <h1 className="text-capitalize">Checkout</h1>
+          <div className="col-10 mx-auto banner-title text-center text-capitalize">
+            Checkout
           </div>
           <form onSubmit={this.getEmail} onBlur={this.handleHero}  >
           <div className="flex-container main">
-            <div className="flex-container a">
-              <div className="badge bdg" >
-                <h2 className="pt-2">1</h2>
-              </div>
+            <div className="flex-container steps-text a">
+              <div className="badge pt-2">1</div>
               <div className="align-self-center">
-                <h2>Order Summary</h2>
+                Order Summary
               </div>
             </div>
             <CartList value={value} />
             
             <CartTotals value={value} history={this.props.history} />
 
-            <div className="flex-container a">
-              <div className="badge bdg align-self-center" >
-                <h2 className="pt-2">2</h2>
-              </div>
-              <div className="align-self-center">
-                <h2>Delivery Information</h2>
+            <div className="flex-container steps-text a">
+              <div className="badge pt-2" >2</div>
+                <div className="align-self-center">Delivery Information
               </div>
             </div>
 
             <div className="flex-container a">
               <div className="paddin" style={{width:'100%'}}  >
               
-                <h5>Receiver's Name</h5>
+                <p>Receiver's Name</p>
                 <input onBlur={this.getFullname} ref={this.customerName} type="text" name="" placeholder="your name"/>
-                <h5>E-mail</h5>
-                
-                  
+                <p>E-mail</p>                  
                   <input onBlur={this.getEmail} ref={this.customerEmail} className = "email" type="text" placeholder="your email"/>
                 
                   
-                <h5>Phone Number</h5>
+                <p>Phone Number</p>
                 <input onBlur={this.getPhone} ref = {this.customerPhone} type="text" name="" placeholder="your phone number"/>
-                <h5>Address</h5>
-                <input onBlur={this.getAddress} ref={this.customerAddress} className="addressfield" type="" name=""/>
+                <p>Address</p>
+                <input onBlur={this.getAddress} ref={this.customerAddress} className="addressfield" type="text" name=""/>
               </div>
             </div>
-            <div className="flex-container a">
-              <div className="badge bdg" >
-                <h2 className="pt-2">3</h2>
-              </div>
-              <div className="align-self-center">
-                <h2>Payment</h2>
-              </div>
+            <div className="flex-container steps-text a">
+              <div className="badge pt-2">3</div>
+              <div className="">Payment</div>
             </div>
-           
-            <div className="flex-container a">
+              <div className="container">
+              <li>Pay with Paystack</li>
+              </div>
+              
+              <div className="container align-self-center">
+              All transactions are secure and encrypted. You will be redirected to Paystack payment gateway where you can securely pay via bank, card or USSD code.
+              </div>
+            <div className="flex-container py-3">
           
-              <div className="flex-container mx-auto">
-                <div style={{width:'100%'}} className="btn btn-success btn-purchase" type="button">
-                  <PaystackPay 
+              <div className="container mx-auto">
+                
+                  <PaystackPay
                   key={cartItems}
                   customerphone = {phone}
                   customermail = {maill}
@@ -128,9 +123,9 @@ export default class Checkout extends Component {
                   history={this.props.history} 
                   total={cartTotal} 
                   cartItems = {cartItems}/>
-                  </div>
+            
                   
-                <div id="paystack-footer" className="paystack-footer animated fadeIn">
+                <div id="paystack-footer" className="paystack-footer text-center py-2 animated fadeIn">
                   <a target="_blank" rel="noopener noreferrer" href="https://paystack.com/what-is-paystack">
                   <img alt="Paystack secured badge" src="https://paystack.com/assets/payment/img/paystack-badge-cards.png"/>
                   </a>
@@ -157,6 +152,9 @@ export default class Checkout extends Component {
   }
 }
 const Spaces = styled.div `
+.steps-text {
+  font-size: 2rem;
+}
 .flex-container.main {
 	display: flex;
 	flex-direction: column;
@@ -169,11 +167,10 @@ const Spaces = styled.div `
 .addressfield {
   min-height: 100px
 }
-.bdg {
+.badge {
 	background-color: palevioletred;
-	
-	width: 60px;
-	margin-right: 10px;
+  margin-right: .9rem;
+  min-width: 3rem;
 }
 .paddin input {
 	padding: 5px;

@@ -83,8 +83,11 @@ body{
   color: palevioletred;
 }
 .payButton {
+  width: 100%;
+  background: green;
   color: #ffffff !important;
   font-size: 1.2rem;
+  border-radius: .7rem;
 }
 
 /* .paddin {

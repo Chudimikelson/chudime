@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>trials</title>
+</head>
+<body>
+<div>
+	<h1>delivery options</h1>
+	<div>
+		<h2>
+			State: 
+			<form>
+				<select name="states" onchange="getLocation()">
+				<option value="abuja">Abuja</option>
+				<option value="lagos">Lagos</option>
+				<option value="ibadan">Ibadan</option>
+				<option value="portharcourt">Portharcourt</option>
+				<option value="asaba">Asaba</option>
+			</select>
+			</form>
+			
+		</h2>
+		
+		<h2>Delivery Method</h2>
+		<p>
+			<form id="form">
+				<input class="deliverType"onclick="getLocation()" type="radio" value="regular" checked name="deliverType">Regular Deliver
+			<input onclick="getLocation()" class="deliverType" type="radio" name="deliverType" value="doorstep">Doorstep Delivery
+			
+			</form>
+		</p>
+	</div>
+	<p>location:
+		<span id="delivery-state"></span>
+	</p>
+	<p>delivery method:
+		<span id="delivery-type"></span>
+	</p>
+	<p>delivery fee:
+		<span id="deliveryFee"></span>
+	</p>
+</div>
+
+
+
+
+<script type="text/javascript">
+	  
+	  var residence = document.forms[0][0][0].value;
+	  var method = document.forms[1][0].value;
+	  function getLocation() {
+		 var location = document.forms[0];
+		 
+		 var i;
+			 for (i = 0; i<location.length; i++) {
+			 	if (location[i].value) {
+			 		residence = location[i].value;
+			 	}
+			 }
+			 showlocation();
+			 getDeliveryMethod();
+	 }
+
+	 function showlocation() {
+	 	console.log(residence);
+	 }
+  		
+	function deliverFee(location) {
+  var result = "";
+
+  var lookup = {
+    "abuja": 1000,
+    "lagos": 2000,
+    "ibadan": 2000,
+    "portharcourt": 2000,
+    "benin": 2000,
+    "owerri": 2000,
+    "asaba": 2000,
+    "minna": 2000,
+    "jos": 2000,
+    "kaduna": 2000,
+  };
+  result = lookup[location];
+  return result;
+}
+
+
+function getDeliveryMethod() {
+	 var deliveryMethod = document.forms[1];
+	 var fee = deliverFee(residence)
+	 
+	 
+	 	if (deliveryMethod[0].checked) {
+	 		method = "regular";
+	 	} else {
+	 		method = "doorstep";
+	 	}
+	 
+	
+
+	 if (method != "regular" && residence != "abuja") {
+	 	fee += 2000;
+	 }
+
+document.getElementById('deliveryFee').innerHTML = fee;
+document.getElementById('delivery-type').innerHTML = method;
+document.getElementById('delivery-state').innerHTML = residence;
+
+ console.log(method);
+	 console.log(fee);
+}
+
+
+</script>
+</body>
+</html>
