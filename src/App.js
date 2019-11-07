@@ -11,6 +11,7 @@ import Modal from './components/Modal';
 import Footer from './components/Footer';
 import Home from './components/Home';
 import Helmet from 'react-helmet';
+import Deliveryfees from './components/Deliveryfees';
 
 class App extends Component {
   render() {
@@ -28,7 +29,7 @@ class App extends Component {
           <Route path="/details" component={Details} />
           <Route path="/checkout" component={Checkout} />
           <Route exact path="/shop" component={ProductList}/>
-          
+          <Route path = "/delivery" component = {Deliveryfees}/>
           <Route component={Default} />
         </Switch>
         <Modal/>
