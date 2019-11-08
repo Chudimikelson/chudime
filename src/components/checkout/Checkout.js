@@ -153,7 +153,7 @@ export default class Checkout extends Component {
 }
 const Spaces = styled.div `
 .steps-text {
-  font-size: 2rem;
+  font-size: 1.7rem;
 }
 .flex-container.main {
 	display: flex;

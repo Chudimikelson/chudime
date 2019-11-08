@@ -84,7 +84,6 @@ class ProductProvider extends Component {
       const posit = tempBestsellerProducts.indexOf(this.getbestsellers(id));
       const bs = tempBestsellerProducts[posit];
       bs.inCart = true;
-      console.log(bs.inCart);
       bs.count = 1;
       const price = bs.price;
       bs.total = price;
