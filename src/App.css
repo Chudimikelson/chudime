@@ -112,6 +112,12 @@ body{
   border-radius: 1.5rem;
   background: #c74d89e3;
 }
+.btc {
+  font-size: 0.8rem;
+  border-radius: 1.5rem;
+  background: var(--lightBlue);
+  width: 60%;
+}
 .cart-btn {
   color: var(--mainWhite);
   width: 100%;
@@ -124,10 +130,7 @@ button {
 button:focus {
   outline:none !important;
 }
-.btc {
-  border-radius: 1.5rem;
-  background: var(--lightBlue);
-}
+
 .nic:hover {
   background: green;
   cursor: pointer;
@@ -296,8 +299,7 @@ button:focus {
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
-  font-size: 1.4rem;
-  font-weight: bold;
+  font-size: .8rem;
   line-height: normal;
   padding: 20px 10px;
   background: var(--title-color);

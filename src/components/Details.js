@@ -11,95 +11,51 @@ export default class Details extends Component {
         {(value)=>{
           const {id,usage,description,img, life, contains, price, title,inCart} = value.detailProduct;
           return (
-            <EmptyWrapper>
-              <div className="container paddit">
-                <div className="row">
-                <div className="col-10 mx-auto text-center text-slanted text-blue my-1">
-                  <h1>{title}</h1>
-                </div>
-                <div className="mx-auto text-blue text-center">
-                    <strong>
-                      price: <span className="mr-1">&#8358;</span>
-                      {price}
-                    </strong>
-                  </div>
+            <EmptyWrapper className="container d-flex flex-wrap paddit">
+              <div className="col-12 col-lg-4">
+              <h2 className="page-title text-center font-weight-bold mb-0">{title}</h2>
+              <img src={img} className="mx-auto card img-fluid" alt="product"/>
+              <p className="text-center page-title">
+                <strong>Price: <span className="mr-1">&#8358;</span>
+                        {price}
+                        </strong>
+                </p>
               </div>
-              
-              <div className="row">
-                <div className="col-10 mx-auto col-md-6 my-3">
-                  <img src={img} className="img-fluid" alt="product"/>
+              <div className="col-12 col-lg-8 page-title">
+                <div>
+                <li><strong>Description</strong><br/>
+          {description}
+        </li>
+        <li><strong>Contains</strong>
+        <br/>{contains}
+        </li>
+        <li><strong>How to use</strong>
+          <br/>{usage}
+        </li>
+        <li><strong>Safety & Shelf-Life</strong>
+          <br/>{life}
+        </li>
                 </div>
-                
-                <div className="col-10 mx-auto col-md-6 text-capitalize">                  
-                  <p className="text-capitalize font-weight-bold mt-3 mb-0">
-                    some info about product
-                  </p>
-                  {/* accordion start */}
-                  <div className="myaccordion-body">
-      
-      <input type="radio" id="description" name="wiki" value="Description"/>
-<input type="radio" id="contains" name="wiki" value="Contains"/>
-<input type="radio" id="usage" name="wiki" value="Usage"/>
-<input type="radio" id="life" name="wiki" value="Life"/>
 
-<ul className="myaccordion">
-  <li data-radio="description">
-    <label htmlFor="description" className="myaccordion-title">
-      <span>i</span>
-      <span className="myaccordion-heading">Description</span>
-    </label>
-    <span className="myaccordion-content">{description}</span>
-  </li>
-  <li data-radio="contains">
-    <label htmlFor="contains" className="myaccordion-title">
-      <span>ii</span>
-      <span className="myaccordion-heading">Contains</span>
-    </label>
-    <span className="myaccordion-content">{contains}</span>
-  </li>
-  <li data-radio="usage">
-    <label htmlFor="usage" className="myaccordion-title">
-      <span>iii</span>
-      <span className="myaccordion-heading">How to Use</span>
-    </label>
-    <span className="myaccordion-content">{usage}</span>
-  </li>
-  <li data-radio="life">
-    <label htmlFor="life" className="myaccordion-title">
-      <span>iv</span>
-      <span className="myaccordion-heading">Shelf-Life</span>
-    </label>
-    <span className="myaccordion-content">{life}</span>
-  </li>
-</ul>
-
-    </div>
-                  {/* accordion end */}
-                  
-                  <div>
-                    <button className="cart-btn text-center text-tit py-0 px-0 my-2 mx-auto"
-                    cart
-                    disabled={inCart? true : false}
-                    onClick={()=> {
-                      value.addToCart(id);
-                      
-                    }}
-                    >
-                      {inCart? (
-                    <p className="ic text-capitalize py-2 mb-0" disabled>
-                      Item added
-                    </p>
-                  ) : (
-                    <p className= "py-2 nic text-capitalize mb-0"><i className="fas fa-cart-plus pr-3"></i>Add to Cart</p>
-                  )}
-                    </button>
-                    <Link to='/shop'>
-                      <button className="cart-btn btc text-center py-0 px-0 my-2" ><p className="py-2 mb-0">Back to Products</p></button>
-                    </Link>
-                  </div>
-                </div>
+                <button className="cart-btn text-center text-tit py-0 px-0 my-2"
+                            cart
+                            disabled={inCart? true : false}
+                            onClick={()=> {
+                              value.addToCart(id);
+                            }}
+                            >
+                              {inCart? (
+                            <p className="mx-auto ic text-capitalize text-center py-2 mb-0" disabled>
+                              Item added
+                            </p>
+                            ) : (
+                            <p className= "mx-auto py-2 nic text-capitalize mb-0">Add to Cart</p>
+                            )}
+                          </button>
+                          <Link to='/shop'>
+                            <button className="cart-btn text-center py-0 px-0 my-2" ><p className="mx-auto py-2 btc mb-0">Back to Products</p></button>
+                          </Link>
               </div>
-            </div>
             </EmptyWrapper>
           )
         }}
@@ -118,9 +74,6 @@ label {
   cursor: pointer;
 }
 
-ul {
-  list-style: none;
-}
 
 a {
   text-decoration: none;
@@ -135,9 +88,8 @@ input[type="radio"] {
 
 .myaccordion {
   position: relative;
-  width: calc(100% - 20px);
-  max-width: 800px;
-  min-height: 380px;
+  width: 100%;
+  min-height: 300px;
   margin: 0 auto;
   background: var(--accordion-color);
   color: var(--white);

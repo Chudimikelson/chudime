@@ -7,7 +7,7 @@ export default class Deliveryfees extends Component {
 		this.state = {
 			residence: "abuja",
 			method: 'regular',
-			fee: ""
+			fee: "1000"
 		};
 	};
 
@@ -36,16 +36,16 @@ export default class Deliveryfees extends Component {
 		var result = "";
 	
 		var lookup = {
-			"abuja": 1,
-			"lagos": 2,
-			"ibadan": 3,
-			"portharcourt": 4,
-			"benin": 5,
-			"owerri": 6,
-			"asaba": 7,
-			"minna": 8,
-			"jos": 9,
-			"kaduna": 10,
+			"abuja": 1000,
+			"lagos": 1500,
+			"ibadan": 1500,
+			"portharcourt": 1500,
+			"benin": 1500,
+			"owerri": 1500,
+			"asaba": 2000,
+			"minna": 1500,
+			"jos": 2000,
+			"kaduna": 1500,
 		};
 		result = lookup[location];
 		return result;
@@ -68,44 +68,31 @@ export default class Deliveryfees extends Component {
 	render() {
 		
 		return (
-			<div className="paddit">
-				<h1>delivery options</h1>
-	<div>
-		<h2>
-			State: 
-			<form>
-				<select name="residence" 
-				value={this.state.residence} onChange={this.getResidence}>
-				<option value="">Select State</option>
-				<option value="abuja">Abuja</option>
-				<option value="lagos">Lagos</option>
-				<option value="ibadan">Ibadan</option>
-				<option value="portharcourt">Portharcourt</option>
-				<option value="asaba">Asaba</option>
-			</select>
-			</form>
-			
-		</h2>
-		
-		<h2>Delivery Method</h2>
-		<div>
-		<form>
-				<input onChange={this.getMethod} type="radio" value="regular" name="deliverType"/>Regular Deliver
-			<input onChange={this.getMethod}  type="radio" name="deliverType" value="doorstep"/>Doorstep Delivery
-			
-			</form>
-		</div>
-	</div>
-	<p>location:
-		<span id="delivery-state">{this.state.residence}</span>
-	</p>
-	<p>delivery method:
-		<span id="delivery-type">{this.state.method}</span>
-	</p>
-	<p>delivery fee:
-		<span id="deliveryFee">{this.state.fee}</span>
-	</p>
-			</div>
+			<>
+				<div className="text-right text-capitalize col-12">shipping:
+					<strong><span id="deliveryFee">{this.state.fee}</span></strong>
+				</div>
+					<div className="d-flex">
+					<form>
+						  <select onChange={this.getMethod} >
+								<option value="regular">Regular</option>
+								<option value="doorstep">Doorstep</option>
+							</select>
+						</form>
+	 
+					<form>
+						<select name="residence" 
+						value={this.state.residence} onChange={this.getResidence}>
+						<option value="">Select State</option>
+						<option value="abuja">Abuja</option>
+						<option value="lagos">Lagos</option>
+						<option value="ibadan">Ibadan</option>
+						<option value="portharcourt">Portharcourt</option>
+						<option value="asaba">Asaba</option>
+						</select>
+					</form>
+				</div>
+			</>
 		);
 	}
 }

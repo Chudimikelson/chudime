@@ -6,6 +6,7 @@ import EmptyCart from '../Cart/EmptyCart';
 import CartTotals from '../Cart/CartTotals';
 import PaystackPay from '../Cart/PaystackPay';
 
+
 export default class Checkout extends Component {
   
   
@@ -102,13 +103,24 @@ export default class Checkout extends Component {
               <div className="badge pt-2">3</div>
               <div className="">Payment</div>
             </div>
-              <div className="container">
-              <li>Pay with Paystack</li>
+              <div className="col-12 d-flex flex-wrap">
+                
+
+                  <form className="payment-options col-12 col-lg-6">
+                    <p className="p-type"><input type="radio" value="paystack" name="paymentmethod"/>Pay with Paystack
+                      <p className="pstack">(You will be redirected to Paystack payment gateway where you can securely pay via bank, card or USSD code.)</p>
+                    </p>
+                    <p className="p-type "><input type="radio" name="paymentmethod" value="wu"/>Western Union
+                      <p className="wu">(For Customers Outside Nigeria Only. Please Contact Customer Care for Payment Procedure)</p>
+                    </p>
+                    <p>All transactions are secure and encrypted.</p>
+                  </form>
+                
+               
               </div>
               
-              <div className="container align-self-center">
-              All transactions are secure and encrypted. You will be redirected to Paystack payment gateway where you can securely pay via bank, card or USSD code.
-              </div>
+              
+              
             <div className="flex-container py-3">
           
               <div className="container mx-auto">
@@ -185,4 +197,8 @@ const Spaces = styled.div `
 }
 .paystack-footer img {
   width: 200px;
+}
+.p-type input {
+  padding: 1px;
+}
 `
