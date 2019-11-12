@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Deliveryfees from '../Deliveryfees';
+import Deliveryfees from '../deliveryfees';
 
 
 export default function CartTotals({value}) {
