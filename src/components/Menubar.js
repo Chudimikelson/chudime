@@ -53,6 +53,12 @@ render() {
                 </MDBDropdownMenu>
               </MDBDropdown>
             </MDBNavItem>
+            <MDBNavItem>
+              <MDBNavLink to="/Academy">Skincare Courses</MDBNavLink>
+            </MDBNavItem>
+            <MDBNavItem>
+              <MDBNavLink to="/Diy">DIY Store</MDBNavLink>
+            </MDBNavItem>
           </MDBNavbarNav>
 
           <MDBNavbarBrand>

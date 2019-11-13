@@ -36,10 +36,10 @@ export default class Sidebar extends Component {
           <Link to="/shop" onClick={this.toggle} className="nav-link">Shop</Link>
           </li>
           <li className="nav-item">
-          <Link to="/academy" onClick={this.toggle}className="nav-link">Learn Skin Care</Link>
+          <Link to="/Academy" onClick={this.toggle}className="nav-link">Skincare Courses</Link>
           </li>
           <li className="nav-item">
-          <Link to="/botanica" onClick={this.toggle}className="nav-link">Buy Ingredients</Link>
+          <Link to="/Diy" onClick={this.toggle}className="nav-link">DIY Store</Link>
           </li>
         </ul>
         </div>

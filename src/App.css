@@ -205,17 +205,15 @@ button:focus {
   background: palevioletred;
   color: #fff;
   text-align: center;
-  /* FOOTER
-–––––––––
+}
+
 .page-footer {
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-  font-size: 1rem;
-  color: var(--black);
+  position: relative;
+  bottom: 0;  
+  right: 0;
+  left: 0;
 }
-––––––––––––––––––––––––––––––––––––––––– */
-}
+
 .WithStyles\(ForwardRef\(ExpansionPanelDetails\)\)-root-81{
   background: palevioletred;
 }

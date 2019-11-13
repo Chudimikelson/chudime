@@ -63,7 +63,7 @@ export default class Checkout extends Component {
       
         <Spaces>
         <div className="container">
-          <div className="col-10 mx-auto banner-title text-center text-capitalize">
+          <div className="col-10 mx-auto text-title  text-center text-capitalize">
             Checkout
           </div>
           <form onSubmit={this.getEmail} onBlur={this.handleHero}  >
