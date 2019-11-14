@@ -73,14 +73,14 @@ export default class DeliveryFee extends Component {
 					<strong><span id="deliveryFee">{this.state.fee}</span></strong>
 				</div>
 					<div className="d-flex">
-					<form>
+
 						  <select onChange={this.getMethod} >
 								<option value="regular">Regular</option>
 								<option value="doorstep">Doorstep</option>
 							</select>
-						</form>
+	
 	 
-					<form>
+	
 						<select name="residence" 
 						value={this.state.residence} onChange={this.getResidence}>
 						<option value="">Select State</option>
@@ -90,7 +90,7 @@ export default class DeliveryFee extends Component {
 						<option value="portharcourt">Portharcourt</option>
 						<option value="asaba">Asaba</option>
 						</select>
-					</form>
+		
 				</div>
 			</>
 		);

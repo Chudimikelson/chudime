@@ -23,7 +23,7 @@ export default class Collectxn extends Component {
                         value.addCollectionToCart(id);
                       }}
                       >{inCart ? (
-                    <p disabled className="ic mb-0 py-2">
+                    <p disabled className="mx-auto ic mb-0 py-2">
                       Item added
                     </p>
                   ) : (

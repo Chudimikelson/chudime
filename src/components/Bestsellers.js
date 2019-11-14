@@ -17,17 +17,17 @@ export default class Bestsellers extends Component {
               ><Link to="/bestseller">
                  <img src={img} alt="Etoile Beauty Nig organic natural black soap body lotion face cream skin glowing lightening brightening serum oil mask"/></Link>
                   <div className="finess ">
-                    <button className="cart-btn text-center text-capitalize"
+                    <button className="cart-btn"
                       disabled={inCart ? true : false}
                       onClick={() => {
                         value.addBsToCart(id);
                       }}
                       >{inCart ? (
-                    <p disabled className="ic mb-0 py-2">
+                    <p disabled className="mx-auto ic text-capitalize text-center py-2 mb-0">
                       Item added
                     </p>
                   ) : (
-                    <p className="py-2 mx-auto nic mb-0">Add to Cart</p>
+                    <p className="py-2 nic mx-auto text-capitalize mb-0">Add to Cart</p>
                   )}</button>
                   </div>
                   <div className="d-flex justify-content-center cxx">

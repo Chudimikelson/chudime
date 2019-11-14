@@ -21,6 +21,8 @@ class ProductProvider extends Component {
         cartSubTotal:0,
         cartTax:0,
         cartTotal:0,
+        residence: "abuja",
+			  method: 'regular',
         shipping:2500
     };
     componentDidMount(){
@@ -244,6 +246,14 @@ class ProductProvider extends Component {
       this.addTotals();
     });
   };
+
+  getResidence = (e) => {
+    let val = e.target.value;
+    this.setState(()=>{
+      return {residence:val}
+    });
+  };
+
   addTotals = () => {
     let subTotal = 0;
     const shipping = 2500;
@@ -269,6 +279,7 @@ class ProductProvider extends Component {
                 addToCart:this.addToCart,
                 addBsToCart:this.addBsToCart,
                 addCollectionToCart:this.addCollectionToCart,
+                getResidence:this.getResidence,
                 openModal:this.openModal,
                 closeModal:this.closeModal,
                 increment:this.increment,

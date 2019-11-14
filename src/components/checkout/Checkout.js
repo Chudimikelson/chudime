@@ -106,15 +106,15 @@ export default class Checkout extends Component {
               <div className="col-12 d-flex flex-wrap">
                 
 
-                  <form className="payment-options col-12 col-lg-6">
-                    <p className="p-type"><input type="radio" value="paystack" name="paymentmethod"/>Pay with Paystack
+                  <div className="payment-options col-12 col-lg-6">
+                    <div className="p-type"><input type="radio" value="paystack" name="paymentmethod"/>Pay with Paystack
                       <p className="pstack">(You will be redirected to Paystack payment gateway where you can securely pay via bank, card or USSD code.)</p>
-                    </p>
-                    <p className="p-type "><input type="radio" name="paymentmethod" value="wu"/>Western Union
+                    </div>
+                    <div className="p-type "><input type="radio" name="paymentmethod" value="wu"/>Western Union
                       <p className="wu">(For Customers Outside Nigeria Only. Please Contact Customer Care for Payment Procedure)</p>
-                    </p>
+                    </div>
                     <p>All transactions are secure and encrypted.</p>
-                  </form>
+                  </div>
                 
                
               </div>

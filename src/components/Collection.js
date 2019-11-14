@@ -37,7 +37,6 @@ export default class Collection extends Component {
                 </div>
 
                 <button className="cart-btn text-center text-tit py-0 px-0 my-2"
-                            cart
                             disabled={inCart? true : false}
                             onClick={()=> {
                               value.addCollectionToCart(id);
@@ -48,7 +47,7 @@ export default class Collection extends Component {
                               Item added
                             </p>
                             ) : (
-                            <p className= "mx-auto py-2 nic text-capitalize mb-0">Add to Cart</p>
+                            <p className= "py-2 nic mx-auto text-capitalize mb-0">Add to Cart</p>
                             )}
                           </button>
                           <Link to='/shop'>

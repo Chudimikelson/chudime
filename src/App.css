@@ -205,10 +205,6 @@ button:focus {
   background: palevioletred;
   color: #fff;
   text-align: center;
-  position: relative;
-  bottom: 0;  
-  right: 0;
-  left: 0;
 }
 
 .WithStyles\(ForwardRef\(ExpansionPanelDetails\)\)-root-81{
