@@ -2,17 +2,20 @@ import React, { Component } from "react";
 import styled from "styled-components";
 import { ProductConsumer } from "../Context";
 import PropTypes from "prop-types";
+import {Link} from 'react-router-dom';
 
 export default class Bestsellers extends Component {
   render() {
     const { id, title, img, price, inCart } = this.props.bestseller;
     return (
-      <Btn className="col-12 col-md-5 col-lg-3 mx-auto">
+      <Btn className="col-11 col-md-5 col-lg-3 col-xl-3  mx-auto">
         <div>
         <ProductConsumer>
             {value => (
-              <div className="card">
-                 <img src={img} style={{height:350}}  alt="Etoile Beauty Nig organic natural black soap body lotion face cream skin glowing lightening brightening serum oil mask"/>
+              <div className="card"  
+              onClick={()=>{value.handleDetailx(id)}}
+              ><Link to="/bestseller">
+                 <img src={img} alt="Etoile Beauty Nig organic natural black soap body lotion face cream skin glowing lightening brightening serum oil mask" className="card"/></Link>
                   <div className="finess mx-auto">
                     <button className="btn text-center text-capitalize"
                       disabled={inCart ? true : false}
@@ -81,6 +84,10 @@ const Btn = styled.div `
   border: none;
 }
 img {
+  padding-left: .5rem;
+  padding-right: .5rem;
+  height:400px;
+  width: 300px;
   border-radius: .5rem .5rem 0 0;
 }
 `

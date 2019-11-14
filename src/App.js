@@ -13,6 +13,7 @@ import Home from './components/Home';
 import Helmet from 'react-helmet';
 import Academy from './components/Academy';
 import Diy from './components/Diy';
+import Bestsells from './components/Bestsells';
 
 class App extends Component {
   render() {
@@ -28,6 +29,7 @@ class App extends Component {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/details" component={Details} />
+          <Route path="/bestseller" component={Bestsells} />
           <Route path="/checkout" component={Checkout} />
           <Route exact path="/shop" component={ProductList}/>
           <Route path="/Academy" component={Academy}/>

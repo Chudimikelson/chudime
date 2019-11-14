@@ -176,6 +176,20 @@ export const detailProduct = {
   total: 0
 };
 
+export const detailCat = {
+  id: 13,
+  title: "Active Glow Set",
+  img: "img/active glow set.jpg",
+  price: 14000,
+  description: "Specially curated to tackle hyperpigmentation on face and body. improve skin glow and even out skin tone.",
+  contains: "One Turmeric soap, One light radiance lotion and One radiance face milk",
+  usage: "Step 1: Apply soap unto skin for 5minutes, then rinse off. Step 2: Apply face milk on face and neck.  Step 3: Apply lotion on body.",
+  life: "Keep out of reach of children. Discontinue if skin irritation occurs. Do not use on open or split skin. For external use only.",
+  inCart: false,
+  count: 0,
+  total: 0
+};
+
 export const bestsellerProducts = [
 {
   id: 13,

@@ -2,8 +2,10 @@ import React from 'react';
 
 export default function SocialFollow() {
   return (
-    <div className="one">Visit us on social media
-      <div className="d-flex justify-content-center  get-in-touch p-2">
+    <div className="one">
+      <div>
+        <div className="text-center">Visit us on social media</div>
+        <div className="d-flex justify-content-center  get-in-touch p-2">
         <a href="https://www.instagram.com/etoile_skincare" rel="noopener noreferrer" target="_blank"
            className="instagram social">
 
@@ -22,6 +24,7 @@ export default function SocialFollow() {
             <i className="fab fa-whatsapp"></i>
       
         </a>
+        </div>
       </div>
   </div>
   )

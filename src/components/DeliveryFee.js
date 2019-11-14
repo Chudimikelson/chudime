@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 
-export default class Deliveryfees extends Component {
+export default class DeliveryFee extends Component {
 
 	constructor(props){
 		super(props);

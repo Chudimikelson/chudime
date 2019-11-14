@@ -1,6 +1,6 @@
 import React from "react";
 import styled from 'styled-components';
-import banner from '../photos/IMG-2.jpg';
+import banner from '../photos/IMG-1.jpg';
 import {Link} from 'react-router-dom';
 
 const Banner = () => {
@@ -24,7 +24,7 @@ const Bannerstyle = styled.div `
 
 img {
   max-height: 40rem;
-  width: 100%;
+  width: 100vw;
 }
 .finess {
   position: relative;

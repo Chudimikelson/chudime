@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {storeProducts, detailProduct, bestsellerProducts} from './data';
+import {storeProducts, detailProduct, detailCat,  bestsellerProducts} from './data';
 
 
 const ProductContext = React.createContext();
@@ -11,6 +11,7 @@ class ProductProvider extends Component {
         products: [],
         bestsellers: [],
         detailProduct:detailProduct,
+        detailCat:detailCat,
         cart: [],
         modalOpen: false,
         sidebarOpen: false,
@@ -56,7 +57,12 @@ class ProductProvider extends Component {
       return bs;
     }
 
-    
+    handleDetailx = id => {
+      const bs = this.getbestsellers(id);
+      this.setState(() => {
+        return {detailCat:bs}
+      })
+  };  
 
     handleDetail = id => {
         const product = this.getItem(id);
@@ -64,6 +70,9 @@ class ProductProvider extends Component {
           return {detailProduct:product}
         })
     };
+
+
+
     addToCart = (id) => {
         let tempProducts = [...this.state.products];
         const index = tempProducts.indexOf(this.getItem(id));
@@ -201,6 +210,7 @@ class ProductProvider extends Component {
         return (
             <ProductContext.Provider value={{...this.state,
                 handleDetail:this.handleDetail,
+                handleDetailx:this.handleDetailx,
                 addToCart:this.addToCart,
                 addBsToCart:this.addBsToCart,
                 openModal:this.openModal,

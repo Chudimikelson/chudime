@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import catPic1 from '../photos/kids set.jpg';
-import catPic2 from '../photos/banner2.jpg';
+import catPic2 from '../photos/allproducts.jpg';
 import {Link} from 'react-router-dom';
 export default function ShopByCategories() {
   return (
@@ -11,15 +11,15 @@ export default function ShopByCategories() {
       </div>
       <div className="container mx-auto flex-container row">
         <div className="col-md-6 col-lg-6">
-          <img className="img-fluid" style={{height:350}}  src={catPic2}  alt="Etoile Beauty Nig skin lightening black soap brightening body lotion"/>
+          <img className="img-fluid" style={{height:350}}  src={catPic2}  alt="Etoile Beauty Nig skin lightening black soap brightening body lotion"/><Link to="/shop">
           <div className="finess mx-auto">
-            <Link to="/shop">
+            
               <button className="py-1 text-capitalize">Shop All</button>
-            </Link>
-          </div>  
+            
+          </div> </Link> 
         </div>
         <div className="col-md-6 col-lg-6"><img className="img-fluid" alt="Natural Lightening and skin brightening lotions and creams for kids" style={{height:350}}  src={catPic1} />
-          <div className="finess mx-auto"><button className="py-1 text-capitalize">Kids</button>
+          <div className="finess mx-auto"><button className="py-1 text-capitalize">Collections</button>
           </div>
         </div>
       </div>

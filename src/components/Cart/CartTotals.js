@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Deliveryfees from '../deliveryfees';
+import DeliveryFee from '../DeliveryFee';
 
 
 export default function CartTotals({value}) {
@@ -15,7 +15,7 @@ export default function CartTotals({value}) {
             <strong><span className="mr-1">&#8358;</span> {cartSubTotal} </strong>
           </div>
 
-          <Deliveryfees/>
+          <DeliveryFee/>
           <div className="col-12 text-right text-capitalize">
               <span className="text-capitalize">Total :</span>
               <strong><span className="mr-1">&#8358;</span> {cartTotal} </strong>
