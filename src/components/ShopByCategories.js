@@ -7,10 +7,10 @@ export default function ShopByCategories() {
   return (
     <Sbc>
       <div className="sbc text-center text-title">
-        <h2>Etoile Beauty Categories</h2>
+        <h2 className="page-title">Etoile Beauty Categories</h2>
       </div>
       <div className="container mx-auto flex-container row">
-        <div className="col-md-6 col-lg-6">
+        <div className="col-md-6 col-sm-6 col-lg-6">
           <img className="img-fluid" style={{height:350}}  src={catPic2}  alt="Etoile Beauty Nig skin lightening black soap brightening body lotion"/><Link to="/shop">
           <div className="finess mx-auto">
             
@@ -18,9 +18,9 @@ export default function ShopByCategories() {
             
           </div> </Link> 
         </div>
-        <div className="col-md-6 col-lg-6"><img className="img-fluid" alt="Natural Lightening and skin brightening lotions and creams for kids" style={{height:350}}  src={catPic1} />
+        <div className="col-md-6 col-sm-6 col-lg-6"><img className="img-fluid" alt="Natural Lightening and skin brightening lotions and creams for kids" style={{height:350}}  src={catPic1} /><Link to="/collections">
           <div className="finess mx-auto"><button className="py-1 text-capitalize">Collections</button>
-          </div>
+          </div></Link>
         </div>
       </div>
     </Sbc>
@@ -56,7 +56,4 @@ img {
   border-radius: .5rem;
 }
 
-h2 {
-  font-size: 14px;
-}
 `

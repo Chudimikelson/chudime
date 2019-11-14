@@ -12,7 +12,7 @@ export default class Navbar extends Component {
         <div className="bbn fixed"><Menubar/></div>
         <NavWrapper className="d-lg-none d-flex justify-content-between p-3  fixed">
           <div className="pl-0"><Sidebar/></div>
-          <div className="text-center mx-auto">
+          <div className="text-center ">
             <Link to='/'>
               <h1 className="mb-0">
                 <img className="mylogo"src={logo} alt="Etoile Beauty Nigeria"/>
@@ -39,7 +39,5 @@ const NavWrapper = styled.nav`
   height: 2rem;
   width: 9rem;
 }
-.fa-shopping-cart {
-  font-size: 1.2rem;
-}
+
 `

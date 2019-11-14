@@ -64,7 +64,7 @@ render() {
           <MDBNavbarBrand>
           <strong className="white-text">
             <NavWrapper>
-            <div className="text-center mx-auto">
+            <div className="text-center">
             <Link to='/'>
               <img className="mylogo"src={logo} alt="store"/>
             </Link>

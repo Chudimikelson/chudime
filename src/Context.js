@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {storeProducts, detailProduct, detailCat,  bestsellerProducts} from './data';
+import {storeProducts, detailProduct, detailCat, collectionDetail, bestsellerProducts, collections} from './data';
 
 
 const ProductContext = React.createContext();
@@ -10,8 +10,10 @@ class ProductProvider extends Component {
     state ={
         products: [],
         bestsellers: [],
+        collections: [],
         detailProduct:detailProduct,
         detailCat:detailCat,
+        collectionDetail:collectionDetail,
         cart: [],
         modalOpen: false,
         sidebarOpen: false,
@@ -24,6 +26,7 @@ class ProductProvider extends Component {
     componentDidMount(){
       this.setProducts();
       this.setBestsellers();
+      this.setCollections();
     }
     setProducts = () => {
       let tempProducts = [];
@@ -47,6 +50,17 @@ class ProductProvider extends Component {
       });
     };
 
+    setCollections = () => {
+      let tempCollections = [];
+      collections.forEach(item => {
+        const oneItem = {...item};
+        tempCollections = [...tempCollections, oneItem];
+      });
+      this.setState(() => {
+        return {collections: tempCollections};
+      });
+    };
+
     getItem = (id) => {
       const product = this.state.products.find(item => item.id ===id);
       return product;
@@ -55,6 +69,11 @@ class ProductProvider extends Component {
     getbestsellers = (id) => {
       const bs = this.state.bestsellers.find(item => item.id === id);
       return bs;
+    }
+
+    getcollection = (id) => {
+      const clxt = this.state.collections.find(item => item.id === id);
+      return clxt;
     }
 
     handleDetailx = id => {
@@ -70,6 +89,13 @@ class ProductProvider extends Component {
           return {detailProduct:product}
         })
     };
+
+    handleCollectionDetail = id => {
+      const clxt = this.getcollection(id);
+      this.setState(() => {
+        return {collectionDetail:clxt}
+      })
+  };
 
 
 
@@ -102,6 +128,21 @@ class ProductProvider extends Component {
         this.addTotals();
       });
   };
+
+  addCollectionToCart = (id) => {
+    let tempCollections = [...this.state.collections];
+    const position = tempCollections.indexOf(this.getcollection(id));
+    const clxt = tempCollections[position];
+    clxt.inCart = true;
+    clxt.count = 1;
+    const price = clxt.price;
+    clxt.total = price;
+    this.setState(() => {
+      return {collections:tempCollections, cart:[...this.state.cart, clxt]};
+    }, () => {
+      this.addTotals();
+    });
+};
     
     openModal = id => {
     const product = this.getItem(id);
@@ -158,25 +199,37 @@ class ProductProvider extends Component {
   removeItem = (id) => {
     let tempProducts = [...this.state.products];
     let tempbs = [...this.state.bestsellers];
+    let tempCollectxn = [...this.state.collections];
     let tempCart = [...this.state.cart];
     tempCart = tempCart.filter(item => item.id!==id);
     const index = tempProducts.indexOf(this.getItem(id));
     let posit = tempbs.indexOf(this.getbestsellers(id));
-    console.log(tempCart);
-    console.log(index);
+    let position = tempCollectxn.indexOf(this.getcollection(id));
+    
     let removedProduct = tempProducts[index];
-    if (!removedProduct)  {
-      removedProduct = tempbs[posit];
+    let removedbs = tempbs[posit];
+    let removedclxt = tempCollectxn[position];
+    if (removedProduct)  {
+      removedProduct.inCart = false;
+      removedProduct.count = 0;
+      removedProduct.total = 0;
+    } else if (removedbs) {
+      removedbs.inCart = false;
+      removedbs.count = 0;
+      removedbs.total = 0;
+    } else if (removedclxt) {
+      removedclxt.inCart = false;
+      removedclxt.count = 0;
+      removedclxt.total = 0;
     }
-    removedProduct.inCart = false;
-
-    removedProduct.count = 0;
-    removedProduct.total = 0;
+    
 
     this.setState(() => {
       return {
         cart:[...tempCart],
-        products:[...tempProducts]
+        products:[...tempProducts],
+        bestsellers: [...tempbs],
+        collections: [...tempCollectxn]
       };
     }, () => {this.addTotals();
     });
@@ -187,6 +240,7 @@ class ProductProvider extends Component {
     }, () => {
       this.setProducts();
       this.setBestsellers();
+      this.setCollections();
       this.addTotals();
     });
   };
@@ -211,8 +265,10 @@ class ProductProvider extends Component {
             <ProductContext.Provider value={{...this.state,
                 handleDetail:this.handleDetail,
                 handleDetailx:this.handleDetailx,
+                handleCollectionDetail:this.handleCollectionDetail,
                 addToCart:this.addToCart,
                 addBsToCart:this.addBsToCart,
+                addCollectionToCart:this.addCollectionToCart,
                 openModal:this.openModal,
                 closeModal:this.closeModal,
                 increment:this.increment,

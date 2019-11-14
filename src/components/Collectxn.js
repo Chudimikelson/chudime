@@ -1,26 +1,26 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 import styled from "styled-components";
 import { ProductConsumer } from "../Context";
 import PropTypes from "prop-types";
 import {Link} from 'react-router-dom';
 
-export default class Bestsellers extends Component {
+export default class Collectxn extends Component {
   render() {
-    const { id, title, img, price, inCart } = this.props.bestseller;
+    const { id, title, img, price, inCart } = this.props.collection;
     return (
       <Btn className="col-11 col-md-6 col-sm-6 col-lg-3 col-xl-3  mx-auto">
   
         <ProductConsumer>
             {value => (
               <div className=""  
-              onClick={()=>{value.handleDetailx(id)}}
-              ><Link to="/bestseller">
+              onClick={()=>{value.handleCollectionDetail(id)}}
+              ><Link to="/collection">
                  <img src={img} alt="Etoile Beauty Nig organic natural black soap body lotion face cream skin glowing lightening brightening serum oil mask"/></Link>
                   <div className="finess ">
                     <button className="cart-btn text-center text-capitalize"
                       disabled={inCart ? true : false}
                       onClick={() => {
-                        value.addBsToCart(id);
+                        value.addCollectionToCart(id);
                       }}
                       >{inCart ? (
                     <p disabled className="ic mb-0 py-2">
@@ -41,13 +41,11 @@ export default class Bestsellers extends Component {
           </ProductConsumer>
 
         </Btn>
-        
-    );
+    )
   }
 }
-
-Bestsellers.propTypes = {
-  bestseller: PropTypes.shape({
+Collectxn.propTypes = {
+  collection: PropTypes.shape({
     id: PropTypes.number,
     img: PropTypes.string,
     title: PropTypes.string,

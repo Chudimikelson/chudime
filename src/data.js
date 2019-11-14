@@ -189,6 +189,19 @@ export const detailCat = {
   count: 0,
   total: 0
 };
+export const collectionDetail = {
+  id: 13,
+  title: "Active Glow Set",
+  img: "img/active glow set.jpg",
+  price: 14000,
+  description: "Specially curated to tackle hyperpigmentation on face and body. improve skin glow and even out skin tone.",
+  contains: "One Turmeric soap, One light radiance lotion and One radiance face milk",
+  usage: "Step 1: Apply soap unto skin for 5minutes, then rinse off. Step 2: Apply face milk on face and neck.  Step 3: Apply lotion on body.",
+  life: "Keep out of reach of children. Discontinue if skin irritation occurs. Do not use on open or split skin. For external use only.",
+  inCart: false,
+  count: 0,
+  total: 0
+};
 
 export const bestsellerProducts = [
 {
@@ -244,3 +257,57 @@ export const bestsellerProducts = [
   total: 0
 }
 ];
+export const collections = [
+  {
+    id: 17,
+    title: "Active Glow Set",
+    img: "img/active glow set.jpg",
+    price: 14000,
+    description: "Specially curated to tackle hyperpigmentation on face and body. improve skin glow and even out skin tone.",
+    contains: "One Turmeric soap, One light radiance lotion and One radiance face milk",
+    usage: "Step 1: Apply soap unto skin for 5minutes, then rinse off. Step 2: Apply face milk on face and neck.  Step 3: Apply lotion on body.",
+    life: "Keep out of reach of children. Discontinue if skin irritation occurs. Do not use on open or split skin. For external use only.",
+    inCart: false,
+    count: 0,
+    total: 0
+  },
+  {
+    id: 18,
+    title: "Fresh Glow Set",
+    img: "img/fresh glow set.jpg",
+     price: 12000,
+     description: "Specially curated brighten face and body, soften the skin and improve skin radiance",
+     contains: "One estelle black soap, One radiance lotion(melanin/caramel) and One radiance face milk",
+    usage: "Step 1: Apply soap unto skin for 5minutes, then rinse off. Step 2: Apply face milk on face and neck.  Step 3: Apply lotion on body.",
+    life: "Keep out of reach of children. Discontinue if skin irritation occurs. Do not use on open or split skin. For external use only.",
+    inCart: false,
+    count: 0,
+    total: 0
+  },
+  {
+    id: 19,
+    title: "Basic Glow Set",
+    img: "img/active glow set.jpg",
+    price: 5000,
+    description: "Specially curated to brighten dull skin by exfoliating the skin, keeping it moisturized and help to fade stretch marks",
+    contains: "One shea glow polish and One shea glow oil",
+    usage: "Step 1: Massage desired quantity of shea glow polish unto skin for 5minutes, then rinse off. Step 2: Apply shea glow oil on damp skin, immediately after exfoliating.  CAUTION:DO NOT Apply on your face if you have breakouts.",
+    life: "Keep out of reach of children. Discontinue if skin irritation occurs. Do not use on open or split skin. For external use only.",
+    inCart: false,
+    count: 0,
+    total: 0
+  },
+  {
+    id: 20,
+    title: "Kids Care Set",
+    img: "img/kids set.jpg",
+    price: 11000,
+    description: "Carefully put together to ensure that your children's skin is properly cleansed, moisturized and protected. this combination improves skin conditions such as dry skin and eczema",
+    contains: "One noono kids soap, One kooko body butter and One chiis body oil",
+    usage: "Step 1: Apply soap unto skin, then rinse off. Step 2: Apply body butter on damp skin.  Step 3: Apply body oil on hair and skin.",
+    life: "Keep out of reach of children. Discontinue if skin irritation occurs. Do not use on open or split skin. For external use only.",
+    inCart: false,
+    count: 0,
+    total: 0
+  }
+  ];

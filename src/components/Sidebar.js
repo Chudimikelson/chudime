@@ -64,14 +64,4 @@ background: #fff;
   width: 9rem;
 }
 
-#menuBar {
-  font-size: 1.2rem;
-  background-color: transparent;
-  border:none;
-
-}
-
-.fa-shopping-cart {
-  font-size: 1.2rem;
-}
 `

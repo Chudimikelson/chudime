@@ -9,7 +9,7 @@ const Banner = () => {
             <div className="text-center fines">Welcome <h1 className="page-title">Etoile Beauty Nig</h1>
         
         </div>
-      <img className="pt-3" alt="Etoile Beauty Nig" src={banner} />
+      <img className="img-fluid pt-3" alt="Etoile Beauty Nig" src={banner} />
 
       <div className="finess d-flex justify-content-center">
         <Link to='/shop'>
@@ -23,8 +23,8 @@ const Banner = () => {
 const Bannerstyle = styled.div `
 
 img {
-  max-height: 40rem;
-  width: 100vw;
+  max-height: 35rem;
+  width: 100%;
 }
 .finess {
   position: relative;

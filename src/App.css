@@ -101,13 +101,13 @@ body{
 } */
 
 .ic {
-  width: 60%;
+  width: 70%;
   font-size: 0.8rem;
   background: green;
   border-radius: 1.5rem;
 }
 .nic {
-  width: 60%;
+  width: 70%;
   font-size: 0.8rem;
   border-radius: 1.5rem;
   background: #c74d89e3;
@@ -205,9 +205,6 @@ button:focus {
   background: palevioletred;
   color: #fff;
   text-align: center;
-}
-
-.page-footer {
   position: relative;
   bottom: 0;  
   right: 0;
@@ -253,9 +250,6 @@ button:focus {
   font-weight: 400 !important;
 }
 
-.bestsellers h2 {
-  font-size: 14px;
-}
 
 /* .get-in-touch span {
   background: #fff;
@@ -271,6 +265,17 @@ button:focus {
   color: palevioletred;
 }
 
+#menuBar {
+  font-size: 1.2rem;
+  background-color: transparent;
+  border:none;
+
+}
+
+.fa-shopping-cart {
+  font-size: 1.2rem;
+}
+
 .one .fab {
   margin: 0 .2rem;
   height: 2rem;
@@ -284,7 +289,7 @@ button:focus {
 }
 
 .page-title {
-  font-size: 1.5rem;
+  font-size: 1rem;
 }
 
 .myaccordion-body * {
@@ -342,12 +347,29 @@ button:focus {
     flex-direction: column;
     width: 70px;
   }
+  .page-title {
+    font-size: 2rem;
+  }
+  #menuBar {
+    font-size: 2rem;
+    background-color: transparent;
+    border:none;
+  
+  }
+  
+  .fas.fa-shopping-cart, .fab, .nav-link {
+    font-size: 2rem;
+  }
 }
 
 @media screen and (min-width:1200px) {
 
   .footer {
     text-align: left;
+  }
+
+  .fas.fa-shopping-cart, .fab, .nav-link {
+    font-size: 1.5rem;
   }
 
   .card-img-top {
@@ -382,4 +404,8 @@ button:focus {
   .sbc {
     margin-bottom: 1rem;
   }
+  .page-title {
+    font-size: 2.5rem;
+  }
+ 
 }

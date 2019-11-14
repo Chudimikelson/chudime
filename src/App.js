@@ -14,6 +14,8 @@ import Helmet from 'react-helmet';
 import Academy from './components/Academy';
 import Diy from './components/Diy';
 import Bestsells from './components/Bestsells';
+import Collection from './components/Collection';
+import Collections from './components/Collections';
 
 class App extends Component {
   render() {
@@ -30,6 +32,8 @@ class App extends Component {
           <Route exact path="/" component={Home} />
           <Route path="/details" component={Details} />
           <Route path="/bestseller" component={Bestsells} />
+          <Route path="/collection" component={Collection}/>
+          <Route path="/collections" component={Collections}/>
           <Route path="/checkout" component={Checkout} />
           <Route exact path="/shop" component={ProductList}/>
           <Route path="/Academy" component={Academy}/>

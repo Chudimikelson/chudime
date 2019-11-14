@@ -10,7 +10,7 @@ export default class ProductList extends Component {
       <React.Fragment>
       <Helmet>
         <title>Etoile Beauty Nigeria | Lightening Black Soap, Natural Body Brightening Lotion, Face Cream, Scrubs, Masks, Oils and Serums</title>
-        <meta nmae="description" content="Etoile Beauty Nigeria is your best bet for buying organic and natural skin care products, lightening black soap, brightening lotions, creams and oils for a natural glowing face, body and all-round beauty"
+        <meta name="description" content="Etoile Beauty Nigeria is your best bet for buying organic and natural skin care products, lightening black soap, brightening lotions, creams and oils for a natural glowing face, body and all-round beauty"
         />
         </Helmet>
       
