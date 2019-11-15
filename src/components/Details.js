@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {ProductConsumer} from '../Context';
 import {Link} from 'react-router-dom';
 import styled from 'styled-components';
-
+import Helmet from 'react-helmet';
 
 export default class Details extends Component {
   render() {
@@ -11,6 +11,11 @@ export default class Details extends Component {
         {(value)=>{
           const {id,usage,description,img, life, contains, price, title,inCart} = value.detailProduct;
           return (
+            <><Helmet>
+        <title>Etoile Beauty | {title}</title>
+        <meta name="description" content="Etoile Beauty Nigeria is your best bet for buying organic and natural skin care products, lightening black soap, brightening lotions, creams and oils for a natural glowing face, body and all-round beauty"
+        />
+        </Helmet>
             <EmptyWrapper className="container d-flex flex-wrap paddit">
               <div className="col-12 col-lg-4">
               <h2 className="page-title text-center font-weight-bold mb-0">{title}</h2>
@@ -56,7 +61,7 @@ export default class Details extends Component {
                             <button className="cart-btn text-center py-0 px-0 my-2" ><p className="mx-auto py-2 btc mb-0">Back to Products</p></button>
                           </Link>
               </div>
-            </EmptyWrapper>
+            </EmptyWrapper></>
           )
         }}
       </ProductConsumer>

@@ -305,6 +305,16 @@ button:focus {
   transition: color 0.1s;
 }
 
+.collection-image {
+  height:350px;
+  width: 100%;
+  border-radius: .5rem .5rem 0 0;
+}
+
+.horizontalLine {
+  width: 50px;
+}
+
 @media screen and (max-width:769px) {
   .bbn {
     display:none;
@@ -360,6 +370,9 @@ button:focus {
 
 @media screen and (min-width:1200px) {
 
+  .collection-image {
+    height:400px;
+  }
   .footer {
     text-align: left;
   }

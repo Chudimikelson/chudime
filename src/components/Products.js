@@ -42,7 +42,7 @@ export default class Products extends Component {
                     <p className= "py-2 nic mx-auto text-capitalize mb-0">Add to Cart</p>
                   )}
                 </button>
-                <hr style={{width:50}}/>
+                <hr className="horizontalLine"/>
               </div>
             )}
           </ProductConsumer>

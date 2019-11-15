@@ -8,15 +8,15 @@ export default class Collectxn extends Component {
   render() {
     const { id, title, img, price, inCart } = this.props.collection;
     return (
-      <Btn className="col-11 col-md-6 col-sm-6 col-lg-3 col-xl-3  mx-auto">
+      <Btn className="col-11 col-md-6 col-sm-6 col-lg-4 col-xl-4  mx-auto">
   
         <ProductConsumer>
             {value => (
-              <div className=""  
+              <div className="px-3"  
               onClick={()=>{value.handleCollectionDetail(id)}}
               ><Link to="/collection">
-                 <img src={img} alt="Etoile Beauty Nig organic natural black soap body lotion face cream skin glowing lightening brightening serum oil mask"/></Link>
-                  <div className="finess ">
+                 <img className="collection-image" src={img} alt="Etoile Beauty Nig organic natural black soap body lotion face cream skin glowing lightening brightening serum oil mask"/></Link>
+                  <div className="finess  ">
                     <button className="cart-btn text-center text-capitalize"
                       disabled={inCart ? true : false}
                       onClick={() => {
@@ -55,6 +55,7 @@ Collectxn.propTypes = {
 };
 
 const Btn = styled.div `
+
 .finess {
   position: relative;
   bottom: 3rem;
@@ -72,9 +73,5 @@ const Btn = styled.div `
 .card {
   border: none;
 }
-img {
-  height:350px;
-  width: 100%;
-  border-radius: .5rem .5rem 0 0;
-}
+
 `
