@@ -37,7 +37,7 @@ export default class Details extends Component {
         <li><strong>How to use</strong>
           <br/>{usage}
         </li>
-        <li><strong>Safety & Shelf-Life</strong>
+        <li><strong>Safety</strong>
           <br/>{life}
         </li>
                 </div>

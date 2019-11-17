@@ -5,7 +5,7 @@ export default class DeliveryFee extends Component {
 	constructor(props){
 		super(props);
 		this.state = {
-			residence: "abuja",
+			residence: "Abuja",
 			method: 'regular',
 			fee: "1000"
 		};
@@ -84,11 +84,28 @@ export default class DeliveryFee extends Component {
 						<select name="residence" 
 						value={this.state.residence} onChange={this.getResidence}>
 						<option value="">Select State</option>
-						<option value="abuja">Abuja</option>
-						<option value="lagos">Lagos</option>
-						<option value="ibadan">Ibadan</option>
-						<option value="portharcourt">Portharcourt</option>
-						<option value="asaba">Asaba</option>
+						<option value="Lagos">Lagos</option>
+						<option value="Abuja">Abuja</option>
+						<option value="Portharcourt">Portharcourt</option>
+						<option value="Aba">Aba</option>
+						<option value="Akure">Akure</option>
+						<option value="Asaba">Asaba</option>
+						<option value="Auchi">Auchi</option>
+						<option value="Benin">Benin</option>
+						<option value="Calabar">Calabar</option>
+						<option value="Enugu">Enugu</option>
+						<option value="Ibadan">Ibadan</option>
+						<option value="Ikot">Ikot Ekpene</option>
+						<option value="Jos">Jos</option>
+						<option value="Kaduna">Kaduna</option>
+						<option value="Kano">Kano</option>
+						<option value="Mararaba">Mararaba</option>
+						<option value="Makurdi">Makurdi</option>
+						<option value="MInna">Minna</option>
+						<option value="Onitcha">Onitsha</option>
+						<option value="Owerri">Owerri</option>
+						<option value="Uyo">Uyo</option>
+						<option value="Warri">Warri</option>
 						</select>
 		
 				</div>

@@ -18,16 +18,16 @@ export default class Collection extends Component {
         />
         </Helmet>
             <EmptyWrapper className="container d-flex flex-wrap paddit">
-              <div className="col-12 col-lg-4">
-              <h2 className="page-title text-center font-weight-bold mb-0">{title}</h2>
-              <img src={img} className="mx-auto card img-fluid" alt="product"/>
+              <div className="col-12 col-lg-6">
+              <h2 className="page-title text-center font-weight-bold">{title}</h2>
+              <img src={img} className="justify-content-center collection-image col-lg-6" alt="product"/>
               <p className="text-center page-title">
                 <strong>Price: <span className="mr-1">&#8358;</span>
                         {price}
                         </strong>
                 </p>
               </div>
-              <div className="col-12 col-lg-8 page-title">
+              <div className="col-12 col-lg-6 page-title">
                 <div>
                 <li><strong>Description</strong><br/>
           {description}
@@ -71,6 +71,7 @@ export default class Collection extends Component {
 }
 
 const EmptyWrapper = styled.div `
+
 .myaccordion-body {
   position: relative;
   display: flex;

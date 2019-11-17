@@ -8,7 +8,7 @@ export default class Collectxn extends Component {
   render() {
     const { id, title, img, price, inCart } = this.props.collection;
     return (
-      <Btn className="col-11 col-md-6 col-sm-6 col-lg-4 col-xl-4  mx-auto">
+      <Btn className="col-11 col-md-6 col-sm-6 col-lg-3 col-xl-3  mx-auto">
   
         <ProductConsumer>
             {value => (

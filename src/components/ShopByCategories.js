@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import catPic1 from '../photos/kids set.jpg';
+import catPic1 from '../photos/active glow set.jpg';
 import catPic2 from '../photos/allproducts.jpg';
 import {Link} from 'react-router-dom';
 export default function ShopByCategories() {
