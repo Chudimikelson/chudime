@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {storeProducts, detailProduct, detailCat, collectionDetail, bestsellerProducts, collections} from './data';
+import {storeProducts, detailProduct, detailCat, collectionDetail, bestsellerProducts, collections, lookup} from './data';
 
 
 const ProductContext = React.createContext();
@@ -7,6 +7,11 @@ const ProductContext = React.createContext();
 //Consumer
 
 class ProductProvider extends Component {
+  constructor(props){
+    super(props);
+    this.getLocation = this.getLocation.bind(this);
+    this.getMethod = this.getMethod.bind(this);
+  }
     state ={
         products: [],
         bestsellers: [],
@@ -21,9 +26,9 @@ class ProductProvider extends Component {
         cartSubTotal:0,
         cartTax:0,
         cartTotal:0,
-        residence: "abuja",
+        location: "Abuja",
 			  method: 'regular',
-        shipping:2500
+        shipping:1000
     };
     componentDidMount(){
       this.setProducts();
@@ -247,25 +252,51 @@ class ProductProvider extends Component {
     });
   };
 
-  getResidence = (e) => {
-    let val = e.target.value;
-    this.setState(()=>{
-      return {residence:val}
+  getMethod = (e) => {
+    let location = this.state.location;
+    let method = e.target.value;
+    this.setState({
+      method:method
     });
+    this.getFee(location);
+  };
+  getLocation = (e) => {
+    let location = e.target.value;
+    this.setState({location:location
+    });
+    this.getFee(location);
   };
 
+  getFee = (location) => {
+    let fee = "";
+    fee = lookup[location];
+    this.setState({shipping:fee
+    }, this.addTotals);
+  };
+  
+  // setDeliveryFee = (location) => {
+  //   let fee = this.state.shipping;
+  //   if (location !== "Abuja") {
+  //     fee = 3500;
+  //   };
+  //   this.setState(() => {
+  //     return {shipping:fee};
+  //   });
+  // };
   addTotals = () => {
+    let method = this.state.method;
+    let location = this.state.location;
+    let sfee = this.state.shipping;
     let subTotal = 0;
-    const shipping = 2500;
     this.state.cart.map( item => (subTotal += item.total));
-    const tempTax = subTotal * 0.1;
-    const tax = parseFloat(tempTax.toFixed(2));
-    const total = subTotal + shipping;
+    if (method !== "regular" && location !== "Abuja") {
+      sfee += 2000;
+    }
+    const total = subTotal + sfee;
     this.setState(() => {
       return {
         cartSubTotal:subTotal,
-        cartTax:tax,
-        shipping:shipping,
+        shipping:sfee,
         cartTotal:total
       }
     });
@@ -279,7 +310,8 @@ class ProductProvider extends Component {
                 addToCart:this.addToCart,
                 addBsToCart:this.addBsToCart,
                 addCollectionToCart:this.addCollectionToCart,
-                getResidence:this.getResidence,
+                getLocation:this.getLocation,
+                getMethod:this.getMethod,
                 openModal:this.openModal,
                 closeModal:this.closeModal,
                 increment:this.increment,

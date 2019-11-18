@@ -387,7 +387,7 @@ export const lookup = {
   "Minna": 1500,
   "Jos": 2000,
   "Kaduna": 1500,
-  "Abia":2000,
+  "Aba":2000,
   "Uyo":2000,
   "Onitsha":2000,
   "Markudi":2000,
