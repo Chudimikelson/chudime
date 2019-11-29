@@ -16,6 +16,7 @@ export default function CartTotals({value}) {
             <span className="text-capitalize">Shipping :</span>
             <strong><span className="mr-1">&#8358;</span> {shipping} </strong>
           </div>
+          
           <select value={method} onChange={(e)=>value.getMethod(e)}>
             <option value="regular">Regular</option>
             <option value="doorstep">Doorstep</option>

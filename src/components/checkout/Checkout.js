@@ -7,6 +7,7 @@ import CartTotals from '../Cart/CartTotals';
 import PaystackPay from '../Cart/PaystackPay';
 
 
+
 export default class Checkout extends Component {
   
   
@@ -102,18 +103,19 @@ export default class Checkout extends Component {
             <div className="flex-container steps-text a">
               <div className="badge pt-2">3</div>
               <div className="">Payment</div>
-            </div>
+            </div><p className="mx-auto"     id="paystack-img"></p>
               <div className="col-12 d-flex flex-wrap">
                 
 
                   <div className="payment-options col-12 col-lg-6">
-                    <div className="p-type"><input type="radio" value="paystack" name="paymentmethod"/>Pay with Paystack
-                      <p className="pstack">(You will be redirected to Paystack payment gateway where you can securely pay via bank, card or USSD code.)</p>
+                    <div className="p-type justify-content-center">
+                      
+                      <p className="pstack text-center">After clicking "Make Payment", You will be redirected to Paystack's payment gateway where you can securely pay via bank, card or USSD code.</p>
                     </div>
-                    <div className="p-type "><input type="radio" name="paymentmethod" value="wu"/>Western Union
+                    {/* <div className="p-type "><input type="radio" name="paymentmethod" value="wu"/>Western Union
                       <p className="wu">(For Customers Outside Nigeria Only. Please Contact Customer Care for Payment Procedure)</p>
-                    </div>
-                    <p>All transactions are secure and encrypted.</p>
+                    </div> */}
+                    
                   </div>
                 
                
@@ -124,7 +126,7 @@ export default class Checkout extends Component {
             <div className="flex-container py-3">
           
               <div className="container mx-auto">
-                
+              <p>All transactions are secure and encrypted.</p>
                   <PaystackPay
                   key={cartItems}
                   customerphone = {phone}

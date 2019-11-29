@@ -81,7 +81,7 @@ export default class DeliveryFee extends Component {
 	
 	 
 	
-						<select name="residence" 
+						<select name="location" 
 						value={this.state.residence} onChange={this.getResidence}>
 						<option value="">Select State</option>
 						<option value="Lagos">Lagos</option>

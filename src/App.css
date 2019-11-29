@@ -314,7 +314,11 @@ button:focus {
 .horizontalLine {
   width: 50px;
 }
-
+#paystack-img {
+  height: 71px;
+  width: 200px;
+  background-image: url('./photos/paystk.jpg');
+}
 @media screen and (max-width:769px) {
   .bbn {
     display:none;
