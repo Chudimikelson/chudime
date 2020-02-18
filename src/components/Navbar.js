@@ -3,14 +3,13 @@ import {Link} from 'react-router-dom';
 import logo from '../logo.jpg';
 import styled from 'styled-components';
 import Sidebar from './Sidebar';
-import Menubar from './Menubar';
 
 export default class Navbar extends Component {
   render() {
     return (
       <React.Fragment>
-        <div className="bbn fixed"><Menubar/></div>
-        <NavWrapper className="d-lg-none d-flex justify-content-between p-3  fixed">
+        <div className="bbn fixed"></div>
+        <NavWrapper className="d-flex justify-content-between p-3  fixed">
           <div className="pl-0"><Sidebar/></div>
           <div className="text-center ">
             <Link to='/'>

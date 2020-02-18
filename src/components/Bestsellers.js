@@ -8,15 +8,22 @@ export default class Bestsellers extends Component {
   render() {
     const { id, title, img, price, inCart } = this.props.bestseller;
     return (
-      <Btn className="col-11 col-md-6 col-sm-6 col-lg-3 col-xl-3  mx-auto">
+      <Btn className="col-12 col-md-6 col-sm-6 col-lg-3 col-xl-3  mx-auto">
   
         <ProductConsumer>
             {value => (
-              <div className=""  
+              <div className="shadow-box shadow-hover mb-2"  
               onClick={()=>{value.handleDetailx(id)}}
               ><Link to="/bestseller">
                  <img src={img} alt="Etoile Beauty Nig organic natural black soap body lotion face cream skin glowing lightening brightening serum oil mask"/></Link>
-                  <div className="finess ">
+                  
+                  <div className="d-flex justify-content-center pt-2">
+                    <h1 className="small-text"><p className="px-3 mb-0">{title}</p></h1>
+                    <h3 className="small-text"><p className="mb-0">
+                      <span className="px-1 text-right">&#8358;</span>{price}</p></h3>
+                  </div>
+
+                  <div className="py-2">
                     <button className="cart-btn"
                       disabled={inCart ? true : false}
                       onClick={() => {
@@ -29,11 +36,6 @@ export default class Bestsellers extends Component {
                   ) : (
                     <p className="py-2 nic mx-auto text-capitalize mb-0">Add to Cart</p>
                   )}</button>
-                  </div>
-                  <div className="d-flex justify-content-center cxx">
-                    <h1 className="small-text"><p className="px-3 mb-0">{title}</p></h1>
-                    <h3 className="small-text"><p className="mb-0">
-                      <span className="px-1 text-right">&#8358;</span>{price}</p></h3>
                   </div>
               </div>
                
@@ -75,7 +77,7 @@ const Btn = styled.div `
   border: none;
 }
 img {
-  height:350px;
+  height:300px;
   width: 100%;
   border-radius: .5rem .5rem 0 0;
 }

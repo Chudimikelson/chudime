@@ -240,6 +240,11 @@ button:focus {
   content: '\2212';
 }
 
+.details::after{
+  content:'\2630';
+  float: right;
+}
+
 .two  h6 {
   font-family: Open Sans, sans-serif;
   font-size: .7rem !important;
@@ -368,7 +373,7 @@ button:focus {
   }
   
   .fas.fa-shopping-cart, .fab, .nav-link {
-    font-size: 2rem;
+    font-size: 1rem;
   }
 }
 

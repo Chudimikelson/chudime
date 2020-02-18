@@ -7,7 +7,7 @@ import Typography from '@material-ui/core/Typography';
 
 const ExpansionPanel = withStyles({
   root: {
-    border: '1px solid rgba(0, 0, 0, .125)',
+    border: 'none',
     boxShadow: 'none',
     '&:not(:last-child)': {
       borderBottom: 0,
@@ -25,16 +25,16 @@ const ExpansionPanel = withStyles({
 const ExpansionPanelSummary = withStyles({
   root: {
     backgroundColor: 'rgba(0, 0, 0, .03)',
-    borderBottom: '1px solid rgba(0, 0, 0, .125)',
-    marginBottom: -1,
-    minHeight: 56,
+    borderBottom: '1px solid rgba(0, 0, 0, 0)',
+    marginBottom: 1,
+    minHeight: 40,
     '&$expanded': {
-      minHeight: 56,
+      minHeight: 40,
     },
   },
   content: {
     '&$expanded': {
-      margin: '12px 0',
+      margin: '8px 0',
     },
   },
   expanded: {},
@@ -42,7 +42,7 @@ const ExpansionPanelSummary = withStyles({
 
 const ExpansionPanelDetails = withStyles(theme => ({
   root: {
-    padding: theme.spacing(2),
+    padding: theme.spacing(1),
   },
 }))(MuiExpansionPanelDetails);
 

@@ -5,22 +5,27 @@ import {ProductConsumer} from '../Context';
 export default class ProductList extends Component {
   render() {
     return (
-      <React.Fragment>
-        <div className="container">
-          <div className="text-center text-title">
-            <h2 className="page-title">Best Sellers</h2>
+
+        <section className="bg-light mt-n6">
+          <div class="container bring-to-front pt-0">
+            <div className="row gap-y">
+              <div className="col-12 mx-auto">
+                <div class="shadow-box bg-contrast p-3 rounded h-100">
+                  <p className="bold mt-0">Best Sellers</p>
+                <div className="row">
+                <ProductConsumer>
+                      {value => {
+                        return value.bestsellers.map( bestseller => {
+                          return <Bestsellers key={bestseller.id} bestseller={bestseller}/>;
+                        });
+                      }}
+                </ProductConsumer>
+                </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div className="flex-containerz row">
-          <ProductConsumer>
-                {value => {
-                  return value.bestsellers.map( bestseller => {
-                    return <Bestsellers key={bestseller.id} bestseller={bestseller}/>;
-                  });
-                }}
-          </ProductConsumer>
-          </div>
-        </div>   
-      </React.Fragment>    
+        </section> 
     )
   }
 }

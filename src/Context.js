@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import {storeProducts, detailProduct, detailCat, collectionDetail, bestsellerProducts, collections, lookup} from './data';
 
 
@@ -148,7 +148,7 @@ class ProductProvider extends Component {
       return {collections:tempCollections, cart:[...this.state.cart, clxt]};
     }, () => {
       this.addTotals();
-    });
+    }); 
 };
     
     openModal = id => {
