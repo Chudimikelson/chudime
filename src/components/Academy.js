@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import advanced from '../photos/advanced.png';
 import styled from 'styled-components';
-import { MDBCollapse } from 'mdbreact';
+import nsf from '../photos/nsf.jpg';
+import cert from '../photos/cert.jpg';
 import {Link} from 'react-router-dom';
 import Banner from './Banner';
 
@@ -26,7 +27,7 @@ export default class Academy extends Component {
           <div className="card shadow-hover">
             <div className="card-body">
               <div className="card-title text-center">Guide to Natural Skincare Formulation</div>
-              <Link to="/Guide"><img className="image-responsive" src={advanced} alt="etoile academy"/></Link>
+              <Link to="/Guide"><img className="image-responsive" src={nsf} alt="etoile academy"/></Link>
             </div>
             <div className="card-footer d-flex justify-content-between">
               <div className="money"><span className="px-1">&#8358;</span>40,000</div>
@@ -36,7 +37,7 @@ export default class Academy extends Component {
           <div className="card shadow-hover">
             <div className="card-body">
               <div className="card-title text-center">Certificate in Natural Skincare Formulation</div>
-              <Link to="/Course"><img src={advanced} alt="etoile academy"/></Link>
+              <Link to="/Course"><img src={cert} alt="etoile academy"/></Link>
             </div>
             
             <div className="card-footer d-flex justify-content-between">
