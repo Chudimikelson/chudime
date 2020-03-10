@@ -16,6 +16,8 @@ import Diy from './components/Diy';
 import Bestsells from './components/Bestsells';
 import Collection from './components/Collection';
 import Collections from './components/Collections';
+import Course from './components/Course';
+import Ebook from './components/Ebook';
 
 class App extends Component {
   render() {
@@ -38,6 +40,8 @@ class App extends Component {
           <Route exact path="/shop" component={ProductList}/>
           <Route path="/Academy" component={Academy}/>
           <Route path="/DIY" component={Diy}/>
+          <Route path="/Course" component={Course}/>
+          <Route path="/Guide" component={Ebook}/>
           <Route component={Default} />
         </Switch>
         <Modal/>

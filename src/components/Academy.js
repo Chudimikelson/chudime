@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import advanced from '../photos/advanced.png';
 import styled from 'styled-components';
 import { MDBCollapse } from 'mdbreact';
+import {Link} from 'react-router-dom';
+import Banner from './Banner';
 
 export default class Academy extends Component {
   state = {
@@ -15,18 +17,16 @@ export default class Academy extends Component {
   }
   render () {
     return (
+      <>
+      <Banner/>
       <Acad>
       <div className="container paddit">
         <h1 className="text-capitalize text-center">Register for our courses</h1>
         <div className="row">
           <div className="card shadow-hover">
             <div className="card-body">
-              <div className="card-title details" onClick={this.toggleCollapse("basicCollapses")}>Guide to Natural Skincare Formulation</div>
-              <img src={advanced} alt="etoile academy"/>
-              <MDBCollapse id="basicCollapses" isOpen={this.state.collapseID}>
-                <p>regular one</p>
-                <p>regular two</p>
-              </MDBCollapse>
+              <div className="card-title text-center">Guide to Natural Skincare Formulation</div>
+              <Link to="/Guide"><img className="image-responsive" src={advanced} alt="etoile academy"/></Link>
             </div>
             <div className="card-footer d-flex justify-content-between">
               <div className="money"><span className="px-1">&#8358;</span>40,000</div>
@@ -35,12 +35,8 @@ export default class Academy extends Component {
           </div>
           <div className="card shadow-hover">
             <div className="card-body">
-              <div className="card-title details" onClick={this.toggleCollapse("basicCollapse")}>Certificate in Natural Skincare Formulation</div>
-              <img src={advanced} alt="etoile academy"/>
-              <MDBCollapse id="basicCollapse" isOpen={this.state.collapseID}>
-                <p>advanced one</p>
-                <p>advanced two</p>
-              </MDBCollapse>
+              <div className="card-title text-center">Certificate in Natural Skincare Formulation</div>
+              <Link to="/Course"><img src={advanced} alt="etoile academy"/></Link>
             </div>
             
             <div className="card-footer d-flex justify-content-between">
@@ -51,13 +47,14 @@ export default class Academy extends Component {
             </div></div>
       </div>
       </Acad>
+      </>
     )
   }
 }
 
 const Acad = styled.div `
 img {
-  width: 400px;
+  width: 300px;
 }
 .card-title {
   font-size: 1.3rem;
